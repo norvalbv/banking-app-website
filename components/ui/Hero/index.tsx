@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import HeroBackground from './HeroBackground';
 
 const Hero = () => {
-    function smoothScrollTo(elementId, duration = 1000) {
+    function smoothScrollTo(elementId: string, duration = 1000) {
         const element = document.getElementById(elementId);
         if (!element) return;
       
@@ -14,7 +14,7 @@ const Hero = () => {
         const endPosition = element.getBoundingClientRect().top;
         const startTime = performance.now();
       
-        function scrollStep(currentTime) {
+        function scrollStep(currentTime: number) {
           const elapsedTime = currentTime - startTime;
           const nextStep = easeInOut(elapsedTime, startPosition, endPosition, duration);
       
@@ -27,7 +27,7 @@ const Hero = () => {
           }
         }
       
-        function easeInOut(t, b, c, d) {
+        function easeInOut(t: number, b: number, c: number, d: number) {
           t /= d / 2;
           if (t < 1) return (c / 2) * t * t + b;
           t--;

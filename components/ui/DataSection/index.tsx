@@ -91,7 +91,15 @@ const ParallaxImages = () => {
   );
 };
 
-const ParallaxImg = ({ className, alt, src, start, end }) => {
+type P = {
+  className: string;
+  alt: string;
+  src: string;
+  start: number;
+  end: number;
+}
+
+const ParallaxImg = ({ className, alt, src, start, end }: P) => {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -138,7 +146,13 @@ const Schedule = () => {
   );
 };
 
-const ScheduleItem = ({ title, date, location }) => {
+type T = {
+  title: string;
+  date: string;
+  location: string;
+}
+
+const ScheduleItem = ({ title, date, location }: T) => {
   return (
     <motion.div
       initial={{ y: 48, opacity: 0 }}
