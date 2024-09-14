@@ -31,3 +31,9 @@ body {
     --radius: 0.5rem;
   }
 }
+
+/* @layer components {
+  .linear-gradient-background {
+    @apply animate-gradient bg-[linear-gradient(to_right,theme('#FF0'),theme('#0F0'),theme('#FF0'),theme('#FFF'))] bg-[length:200%_auto];
+  }
+} */

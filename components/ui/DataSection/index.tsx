@@ -97,7 +97,7 @@ type P = {
   src: string;
   start: number;
   end: number;
-}
+};
 
 const ParallaxImg = ({ className, alt, src, start, end }: P) => {
   const ref = useRef(null);
@@ -150,7 +150,7 @@ type T = {
   title: string;
   date: string;
   location: string;
-}
+};
 
 const ScheduleItem = ({ title, date, location }: T) => {
   return (

@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { BatteryCharging, Wifi } from "lucide-react";
+import { motion } from 'framer-motion';
+import { BatteryCharging, Wifi } from 'lucide-react';
 
 const Example = () => {
   return (
@@ -13,23 +13,23 @@ const FloatingPhone = () => {
   return (
     <div
       style={{
-        transformStyle: "preserve-3d",
-        transform: "rotateY(-30deg) rotateX(15deg)",
+        transformStyle: 'preserve-3d',
+        transform: 'rotateY(-30deg) rotateX(15deg)',
       }}
       className="rounded-[24px] bg-violet-500"
     >
       <motion.div
         initial={{
-          transform: "translateZ(8px) translateY(-2px)",
+          transform: 'translateZ(8px) translateY(-2px)',
         }}
         animate={{
-          transform: "translateZ(32px) translateY(-8px)",
+          transform: 'translateZ(32px) translateY(-8px)',
         }}
         transition={{
           repeat: Infinity,
-          repeatType: "mirror",
+          repeatType: 'mirror',
           duration: 2,
-          ease: "easeInOut",
+          ease: 'easeInOut',
         }}
         className="relative h-96 w-56 rounded-[24px] border-2 border-b-4 border-r-4 border-white border-l-neutral-200 border-t-neutral-200 bg-neutral-900 p-1 pl-[3px] pt-[3px]"
       >
@@ -64,10 +64,7 @@ const Screen = () => {
         xmlns="http://www.w3.org/2000/svg"
         className="fill-violet-500"
       >
-        <path
-          d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
-          stopColor="#000000"
-        ></path>
+        <path d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z" stopColor="#000000"></path>
         <path
           d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
           stopColor="#000000"

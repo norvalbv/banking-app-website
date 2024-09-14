@@ -12,14 +12,14 @@ const HeroBackground = () => {
   const texts = [
     'CONTROL TRUST MONITOR FINANCE SAFE',
     'LIMIT SECURE PLAN SAVE PROTECT',
-    'BUDGET GROW STABILITY INVEST CARE',
+    'BUDGET STABILITY INVEST CARE',
     'MANAGE AID RELIEF PREVENT STRENGTH',
   ];
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden opacity-90">
       <div
-        className={`absolute left-0 top-0 flex h-full w-full select-none flex-col text-[20vw] font-bold leading-none text-gray-200 transition-opacity duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute left-0 top-0 flex h-full w-full select-none flex-col text-[18vw] font-black leading-none transition-opacity duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'}`}
       >
         {texts.map((text, index) => (
           <div key={index} className="relative h-1/4 overflow-hidden">
