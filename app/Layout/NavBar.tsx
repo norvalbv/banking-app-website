@@ -12,16 +12,17 @@ const Nav = () => {
   ];
 
   return (
-    <nav className="absolute top-0 z-50 flex w-full items-start justify-between px-6 py-3 text-white">
-      <button className="flex text-zinc-400 gap-4"
-         onClick={() => {
+    <nav className="absolute top-0 z-50 flex w-full items-start justify-between px-10 py-3 text-white">
+      <button
+        className="flex gap-4 text-zinc-400"
+        onClick={() => {
           document.getElementById('launch-schedule')?.scrollIntoView({
             behavior: 'smooth',
           });
         }}
-        >
+      >
         <HandCoins className="text-3xl mix-blend-difference" />
-        <p className='font-black'>Banking App 1.0</p>
+        <p className="font-black">Banking App 1.0</p>
       </button>
       <div className="flex flex-col gap-1">
         {navbarTabs.map((tab) => (
@@ -31,7 +32,7 @@ const Nav = () => {
                 behavior: 'smooth',
               });
             }}
-            className="text-lg text-zinc-400 transition-all duration-300 hover:scale-125 hover:underline hover:underline-offset-4 active:scale-95 active:text-zinc-500"
+            className="hover:text-md text-lg text-zinc-400 hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rounded-lg hover:bg-purple-500 hover:px-2 hover:text-white active:scale-95 active:text-zinc-500"
             key={tab.id}
           >
             {tab.title}

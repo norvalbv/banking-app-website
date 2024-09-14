@@ -39,8 +39,9 @@ const Hero = () => {
   return (
     <div className="relative flex h-screen flex-grow flex-col items-center justify-center overflow-hidden p-6">
       <div className="relative z-10 text-center text-black">
-        <h1 className="text-navy-900 mb-4 text-4xl font-bold md:text-6xl">
-          Financial Control <br /> with <span className="text-purple-500">Trusted Guidance</span>
+        <h1 className="text-navy-900 mb-4 text-6xl font-extrabold md:text-8xl">
+          Take Control of Your Finances <br /> with{' '}
+          <span className="text-purple-500">Trusted Guidance</span>
         </h1>
         <p className="mx-auto mb-8 max-w-md text-gray-600">
           Achieve financial peace of mind with trusted oversight. Whether you&apos;re managing
