@@ -3,6 +3,7 @@
 import React, { ReactElement } from 'react';
 import Nav from '../Layout/NavBar';
 import ReactLenis from 'lenis/react';
+import Footer from '../Layout/Footer';
 
 type Props = {
   children: ReactElement;
@@ -21,6 +22,7 @@ const MainLayout = ({ children }: Props) => {
     >
       <Nav />
       <main>{children}</main>
+      <Footer />
     </ReactLenis>
   );
 };

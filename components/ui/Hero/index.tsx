@@ -9,12 +9,12 @@ import HeroBackground from './HeroBackground';
 
 const Hero = () => {
   return (
-    <div className="flex h-screen flex-grow flex-col items-center justify-center p-6 bg-gradient-to-br from-black via-slate-900 to-slate-800">
-      <CardWrapper className='text-white text-center'>
+    <div className="flex h-screen flex-grow flex-col items-center justify-center bg-gradient-to-br from-black via-slate-900 to-slate-800 p-6">
+      <CardWrapper className="text-center text-white">
         <h1 className="text-navy-900 mb-4 font-extrabold md:text-9xl">
-          Take Control<br /><span className='text-purple-500'>
-             of Your Finances
-            </span>
+          Take Control
+          <br />
+          <span className="text-purple-500">of Your Finances</span>
         </h1>
         <p className="mx-auto mb-8 max-w-md text-gray-400">
           Achieve financial peace of mind with trusted oversight. Whether you&apos;re managing

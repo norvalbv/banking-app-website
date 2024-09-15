@@ -17,7 +17,7 @@ const HeroBackground = () => {
   ];
 
   return (
-    <div className="absolute inset-0 opacity-90 overflow-hidden text-slate-900">
+    <div className="absolute inset-0 overflow-hidden text-slate-900 opacity-90">
       <div
         className={`absolute left-0 top-0 flex h-full w-full select-none flex-col text-[16vw] font-black leading-none transition-opacity duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'}`}
       >

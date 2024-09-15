@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
-const SECTION_HEIGHT = 1500
+const SECTION_HEIGHT = 1500;
 
 export default function Component() {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start start', 'end end']
-  })
+    offset: ['start start', 'end end'],
+  });
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360])
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
   const icons = [
     { color: 'bg-blue-500', letter: 'F' },
@@ -21,7 +21,7 @@ export default function Component() {
     { color: 'bg-yellow-500', letter: 'P' },
     { color: 'bg-purple-500', letter: 'R' },
     { color: 'bg-pink-500', letter: 'C' },
-  ]
+  ];
 
   return (
     <div ref={containerRef} className="relative h-[200vh] bg-gray-100">
@@ -30,7 +30,7 @@ export default function Component() {
           {icons.map((icon, index) => (
             <motion.div
               key={index}
-              className={`absolute h-12 w-12 rounded-full ${icon.color} flex items-center justify-center text-white font-bold`}
+              className={`absolute h-12 w-12 rounded-full ${icon.color} flex items-center justify-center font-bold text-white`}
               style={{
                 top: `${50 - 40 * Math.cos((index / icons.length) * Math.PI * 2)}%`,
                 left: `${50 + 40 * Math.sin((index / icons.length) * Math.PI * 2)}%`,
@@ -45,5 +45,5 @@ export default function Component() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
