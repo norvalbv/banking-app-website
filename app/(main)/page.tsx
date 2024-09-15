@@ -9,7 +9,7 @@ import SignUp from './SignUp';
 
 const Page = () => {
   return (
-    <div className="h-screen">
+    <div className="min-h-screen">
       <Hero />
       <Datainput />
       <DataSection />
