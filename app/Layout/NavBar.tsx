@@ -118,7 +118,7 @@ const Nav = () => {
           }}
         >
           <HandCoins className="text-3xl mix-blend-difference" />
-          <p className="text-lg font-black">Banking App 1.0</p>
+          <p className="text-lg font-black">Thrive Banking</p>
         </button>
         <NavigationMenu>
           <NavigationMenuList>

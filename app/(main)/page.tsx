@@ -4,7 +4,6 @@ import Hero from '@/components/ui/Hero';
 import React from 'react';
 import Datainput from './DataInput';
 import FAQs from './FAQs';
-import { Scroll } from 'lucide-react';
 import SignUp from './SignUp';
 
 const Page = () => {
@@ -13,7 +12,6 @@ const Page = () => {
       <Hero />
       <Datainput />
       <DataSection />
-      {/* <Scroll /> */}
       <FAQs />
       <SignUp />
     </div>

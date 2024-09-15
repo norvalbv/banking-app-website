@@ -12,7 +12,7 @@ export default function DataInput() {
               {/* Curve card on screen */}
               <div className="absolute left-1/2 top-1/2 h-36 w-56 -translate-x-1/2 -translate-y-1/2 transform rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg">
                 <div className="p-4">
-                  <div className="mb-2 text-xs text-gray-400">GO ME</div>
+                  <div className="mb-2 text-xs text-gray-400">THRIVE</div>
                   <div className="flex h-24 items-end justify-end">
                     <div className="mr-2 h-8 w-8 rounded-full bg-gray-600"></div>
                     <div className="h-8 w-8 rounded-full bg-gray-700"></div>
@@ -44,7 +44,7 @@ export default function DataInput() {
           {/* Physical card */}
           <div className="absolute -bottom-4 left-1/2 h-40 w-64 -translate-x-1/2 rotate-12 transform rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 shadow-xl">
             <div className="p-4">
-              <div className="mb-2 text-sm text-gray-400">GO ME</div>
+              <div className="mb-2 text-sm text-gray-400">THRIVE</div>
               <div className="flex h-28 items-end justify-end">
                 <div className="mr-2 h-10 w-10 rounded-full bg-gray-600"></div>
                 <div className="h-10 w-10 rounded-full bg-gray-700"></div>
@@ -59,7 +59,7 @@ export default function DataInput() {
           <span className="text-purple-500">3% abroad</span>
         </h1>
         <p className="mb-6 text-lg text-gray-300">
-          Curve protects you from hidden fees abroad charged by your debit and credit cards. It's
+          Curve protects you from hidden fees abroad charged by your debit and credit cards. It&apos;s
           the only mobile wallet that comes with a physical card so you can spend and withdraw cash
           in any situation.
         </p>

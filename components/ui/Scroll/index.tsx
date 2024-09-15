@@ -3,8 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
-const SECTION_HEIGHT = 1500;
-
 export default function Component() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
