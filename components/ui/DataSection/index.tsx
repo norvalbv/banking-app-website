@@ -6,7 +6,7 @@ import { useRef } from 'react';
 
 const DataSection = () => {
   return (
-    <div className="">
+    <div className="bg-gradient-to-br from-black via-slate-900 to-slate-800">
       <Hero />
       <Schedule />
     </div>

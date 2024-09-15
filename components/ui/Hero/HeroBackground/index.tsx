@@ -17,14 +17,14 @@ const HeroBackground = () => {
   ];
 
   return (
-    <div className="absolute inset-0 overflow-hidden opacity-90">
+    <div className="absolute inset-0 opacity-90 overflow-hidden text-slate-900">
       <div
-        className={`absolute left-0 top-0 flex h-full w-full select-none flex-col text-[18vw] font-black leading-none transition-opacity duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute left-0 top-0 flex h-full w-full select-none flex-col text-[16vw] font-black leading-none transition-opacity duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'}`}
       >
         {texts.map((text, index) => (
-          <div key={index} className="relative h-1/4 overflow-hidden">
+          <div key={index} className="relative h-1/4">
             <div
-              className={`absolute flex w-[200%] ${
+              className={`absolute flex w-[400%] ${
                 index % 2 === 0 ? 'animate-marquee-left' : 'animate-marquee-right'
               }`}
             >

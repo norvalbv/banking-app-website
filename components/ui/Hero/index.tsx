@@ -1,49 +1,22 @@
 'use client';
 
-import React from 'react';
-import { Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { smoothScrollTo } from '@/lib/utils';
+import { Download } from 'lucide-react';
+import React from 'react';
+import CardWrapper from '../CardWrapper';
 import HeroBackground from './HeroBackground';
 
 const Hero = () => {
-  function smoothScrollTo(elementId: string, duration = 1000) {
-    const element = document.getElementById(elementId);
-    if (!element) return;
-
-    const startPosition = window.pageYOffset;
-    const endPosition = element.getBoundingClientRect().top;
-    const startTime = performance.now();
-
-    function scrollStep(currentTime: number) {
-      const elapsedTime = currentTime - startTime;
-      const nextStep = easeInOut(elapsedTime, startPosition, endPosition, duration);
-
-      window.scrollTo(0, nextStep);
-
-      if (elapsedTime < duration) {
-        requestAnimationFrame(scrollStep);
-      } else {
-        window.scrollTo(0, startPosition + endPosition);
-      }
-    }
-
-    function easeInOut(t: number, b: number, c: number, d: number) {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-
-    requestAnimationFrame(scrollStep);
-  }
   return (
-    <div className="relative flex h-screen flex-grow flex-col items-center justify-center overflow-hidden p-6">
-      <div className="relative z-10 text-center text-black">
-        <h1 className="text-navy-900 mb-4 text-6xl font-extrabold md:text-8xl">
-          Take Control of Your Finances <br /> with{' '}
-          <span className="text-purple-500">Trusted Guidance</span>
+    <div className="flex h-screen flex-grow flex-col items-center justify-center p-6 bg-gradient-to-br from-black via-slate-900 to-slate-800">
+      <CardWrapper className='text-white text-center'>
+        <h1 className="text-navy-900 mb-4 font-extrabold md:text-9xl">
+          Take Control<br /><span className='text-purple-500'>
+             of Your Finances
+            </span>
         </h1>
-        <p className="mx-auto mb-8 max-w-md text-gray-600">
+        <p className="mx-auto mb-8 max-w-md text-gray-400">
           Achieve financial peace of mind with trusted oversight. Whether you&apos;re managing
           spending limits or getting help from a trusted party, our app ensures your financial
           health is secured.
@@ -54,7 +27,7 @@ const Hero = () => {
         >
           <Download className="mr-2 h-4 w-4" /> Learn More
         </Button>
-      </div>
+      </CardWrapper>
       <HeroBackground />
     </div>
   );

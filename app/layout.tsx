@@ -31,8 +31,7 @@ export default function RootLayout({
           geistSans.variable,
           geistMono.variable,
           'antialiased',
-
-          'flex min-h-screen flex-col bg-gradient-to-br from-white via-slate-50 to-green-200'
+          'flex min-h-screen flex-col bg-black text-white'
         )}
       >
         {children}
