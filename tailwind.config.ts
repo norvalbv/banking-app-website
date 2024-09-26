@@ -23,7 +23,8 @@ const config: Config = {
   			'marquee-right': 'marquee-right 60s linear infinite',
   			gradient: 'gradient 12s linear infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'blob-float': 'float 20s ease-in-out infinite',
   		},
   		keyframes: {
   			gradient: {
@@ -62,7 +63,19 @@ const config: Config = {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+  			float: {
+  				'0%, 100%': { transform: 'translate(0, 0)' },
+  				'25%': { transform: 'translate(5%, 5%)' },
+  				'50%': { transform: 'translate(-5%, 10%)' },
+  				'75%': { transform: 'translate(-10%, -5%)' },
+  			},
+  		},
+  		backgroundImage: {
+  			'line-mask': "linear-gradient(to bottom, transparent, black 75%, black)",
+  		},
+  		transitionProperty: {
+  			'transform': 'transform',
   		}
   	}
   },

@@ -2,21 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #e3e3e3;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,10 +10,67 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .bg-gradient-radial {
+    background-color: hsla(300, 0%, 95%, 1);
+    background-image: radial-gradient(at 36% 17%, hsla(260, 39%, 90%, 1) 0px, transparent 50%),
+      radial-gradient(at 69% 21%, hsla(190, 59%, 70%, 1) 0px, transparent 50%),
+      radial-gradient(at 28% 53%, hsla(30, 79%, 85%, 1) 0px, transparent 50%),
+      radial-gradient(at 65% 62%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
+      radial-gradient(at 2% 61%, hsla(219, 10%, 95%, 1) 0px, transparent 50%),
+      radial-gradient(at 57% 25%, hsla(210, 19%, 40%, 1) 0px, transparent 50%);
+  }
 }
 
 @layer base {
   :root {
     --radius: 0.5rem;
   }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5%, 5%);
+  }
+  50% {
+    transform: translate(-5%, 10%);
+  }
+  75% {
+    transform: translate(-10%, -5%);
+  }
+}
+
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  filter: blur(60px);
+  opacity: 0.7;
+  animation: float 20s ease-in-out infinite;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.blob-1 {
+  top: -5%;
+  left: -5%;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  bottom: -5%;
+  right: -5%;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  top: 50%;
+  left: 50%;
+  animation-delay: -10s;
 }

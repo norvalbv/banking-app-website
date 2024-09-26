@@ -1,17 +1,14 @@
-import DataSection from '@/components/ui/DataSection';
-import Hero from '@/components/ui/Hero';
-// import Example from '@/components/ui/Mockup';
 import React from 'react';
-import Datainput from './DataInput';
+import Hero from '@/components/ui/Hero';
 import FAQs from './FAQs';
 import SignUp from './SignUp';
+import ParallaxSection from './ParallaxSection';
 
 const Page = () => {
   return (
-    <div className="min-h-screen">
+    <div className="relative">
       <Hero />
-      <Datainput />
-      <DataSection />
+      <ParallaxSection />
       <FAQs />
       <SignUp />
     </div>
