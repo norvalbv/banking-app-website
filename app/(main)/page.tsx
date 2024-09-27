@@ -15,7 +15,7 @@ const Page = () => {
       <AccountSetupSteps />
       <CombineCards />
       <div>Set up alerts</div>
-      <div>View Transactions (tab; what you'll see vs trusted party)</div>
+      <div>View Transactions (tab; what you&apos;ll see vs trusted party)</div>
       <ParallaxSection />
       <div className="absolute bottom-0 left-0 w-full">
         <div className="bg-gradient-radial-lighter h-screen scale-y-[-1] blur-xl" />
