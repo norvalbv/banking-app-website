@@ -22,12 +22,14 @@ const headerVariants = cva('mb-4 font-bold', {
 export type HeaderProps = VariantProps<typeof headerVariants> & {
   title: string;
   highlightedText?: string;
+  inline?: boolean;
   className?: string;
 };
 
 const Header = ({
   title,
   highlightedText,
+  inline,
   size,
   alignment,
   className,
@@ -37,7 +39,8 @@ const Header = ({
       {title}
       {highlightedText && (
         <>
-          <br />
+          {!inline && <br />}
+          {inline && ' '}
           <span className="text-rose-500">{highlightedText}</span>
         </>
       )}

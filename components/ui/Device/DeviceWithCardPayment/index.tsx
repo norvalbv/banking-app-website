@@ -4,7 +4,7 @@ import Lottie from 'lottie-react';
 import payConfirm from '@/lib/constants/pay-confirm.json';
 import BankCard from '../../BankCard';
 
-const DeviceWithViewTransactions = () => {
+const DeviceWithCardPayment = () => {
   return (
     <Device>
       <div className="mx-2 mt-28">
@@ -19,4 +19,4 @@ const DeviceWithViewTransactions = () => {
   );
 };
 
-export default DeviceWithViewTransactions;
+export default DeviceWithCardPayment;

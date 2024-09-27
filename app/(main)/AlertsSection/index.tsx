@@ -43,6 +43,7 @@ const AlertsSection = () => {
             title="Set Custom"
             highlightedText="Limits"
             description="Define spending limits with your trusted party to ensure your finances stay on track."
+            inline
           />
         </Section>
         <Section onInView={() => setActiveSection(1)}>
@@ -50,6 +51,7 @@ const AlertsSection = () => {
             title="Real-Time"
             highlightedText="Alerts"
             description="Get notified immediately when spending limits are exceeded. Your trusted party will be alerted to take action."
+            inline
           />
         </Section>
         <Section onInView={() => setActiveSection(2)}>
@@ -57,6 +59,7 @@ const AlertsSection = () => {
             title="Shared"
             highlightedText="Control"
             description="Your trusted party manages your finances, helping you stay within budget while you retain oversight."
+            inline
           />
         </Section>
       </div>

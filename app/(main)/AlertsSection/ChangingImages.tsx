@@ -1,6 +1,6 @@
 import DeviceWithCardPayment from '@/components/ui/Device/DeviceWithCardPayment';
-import DeviceWithSetLimits from '@/components/ui/Device/DeviceWithSetLimits';
 import DeviceWithConfirmPayment from '@/components/ui/Device/DeviceWithConfirmPayment';
+import DeviceWithSetLimits from '@/components/ui/Device/DeviceWithSetLimits';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactElement } from 'react';
 
