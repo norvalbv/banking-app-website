@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/input';
 import CardWrapper from '@/components/ui/CardWrapper';
 
-export default function SignUp() {
+const SignUp = (): React.ReactElement => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -17,10 +17,10 @@ export default function SignUp() {
   };
 
   return (
-    <CardWrapper className="bg-gradient-to-tr from-black via-black to-slate-900">
+    <CardWrapper>
       <div className="mx-auto grid h-[40rem] w-1/2 place-items-center">
         <div>
-          <h3 className="mb-6 text-4xl font-bold text-purple-500">Join Our Waitlist</h3>
+          <h3 className="mb-6 text-4xl font-bold text-rose-500">Join Our Waitlist</h3>
           <p className="mb-8 text-lg text-gray-600">
             Be the first to know when we launch. Sign up for early access and exclusive offers.
           </p>
@@ -34,9 +34,7 @@ export default function SignUp() {
                 required
                 className="flex-grow"
               />
-              <Button type="submit" className="bg-purple-500 text-white hover:bg-purple-600">
-                Sign Up
-              </Button>
+              <Button type="submit">Sign Up</Button>
             </div>
             <p className="text-sm text-gray-500">
               We respect your privacy. Unsubscribe at any time.
@@ -46,4 +44,6 @@ export default function SignUp() {
       </div>
     </CardWrapper>
   );
-}
+};
+
+export default SignUp;

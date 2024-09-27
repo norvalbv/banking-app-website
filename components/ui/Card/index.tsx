@@ -1,21 +1,22 @@
-import React from 'react';
+import { Badge } from 'lucide-react';
+import React, { ReactElement } from 'react';
+import Header, { HeaderProps } from '../Header';
 
-type Props = {
+type CardProps = {
   cardKey?: string;
+  headerProps: HeaderProps;
+  paragraph: string;
 };
 
-const Card = ({ cardKey }: Props) => {
+const Card = ({ cardKey, headerProps, paragraph }: CardProps): ReactElement => {
   return (
-    <div className="flex h-96 w-96 flex-col justify-evenly rounded-xl border border-white bg-white/70 p-6 shadow-lg">
-      {cardKey && <span className="text-7xl">{cardKey}</span>}
-      <h2 className="mb-4 text-4xl font-bold lg:text-5xl">
-        Save up to <br />
-        <span className="text-rose-500">3% abroad</span>
-      </h2>
-      <p className="text-gray-500">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus in voluptas deleniti
-        fugit a nihil esse ducimus quia dicta assumenda!
-      </p>
+    <div className="relative grid h-96 w-96 grid-row-3 overflow-hidden rounded-xl border border-white bg-white/70 p-6 shadow-lg">
+      <Badge className="absolute -right-20 -top-20 size-64 text-gray-100" strokeWidth={0.5} />
+      <Badge className="absolute -right-24 -top-24 size-64 text-gray-200" strokeWidth={0.5} />
+      <Badge className="absolute -right-28 -top-28 size-64 text-gray-300" strokeWidth={0.5} />
+      {cardKey && <span className="text-7xl row-span-1">{cardKey}</span>}
+      <Header {...headerProps} className='z-10 row-span-1' />
+      <p className="text-gray-500 row-span-1">{paragraph}</p>
     </div>
   );
 };
