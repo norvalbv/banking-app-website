@@ -8,7 +8,7 @@ const DeviceWithCardPaymentFail = () => {
   return (
     <Device>
       <div className="mx-2 mt-28">
-        <BankCard />
+        <BankCard size="small" />
       </div>
       <Lottie
         animationData={payFail}

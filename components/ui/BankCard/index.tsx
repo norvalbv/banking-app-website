@@ -3,23 +3,34 @@
 import { CreditCard } from 'lucide-react';
 import { ReactElement } from 'react';
 import { motion } from 'framer-motion';
-import { cx } from 'class-variance-authority';
+import { cva, cx, type VariantProps } from 'class-variance-authority';
 
-type Props = {
+const bankCardVariants = cva('perspective-1000 relative mx-auto w-full', {
+  variants: {
+    size: {
+      large: 'max-w-[30rem]',
+      small: 'max-w-[15rem]',
+    },
+    animate: {
+      true: '-rotate-3 skew-x-6',
+      false: '',
+    },
+  },
+  defaultVariants: {
+    size: 'large',
+    animate: false,
+  },
+});
+
+type BankCardProps = VariantProps<typeof bankCardVariants> & {
   centerIcon?: boolean;
-  animate?: boolean;
 };
 
-const BankCard = ({ centerIcon, animate }: Props): ReactElement => {
+const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement => {
   return (
-    <div
-      className={cx(
-        'perspective-1000 relative mx-auto w-full max-w-[30rem]',
-        animate && '-rotate-3 skew-x-6'
-      )}
-    >
+    <div className={cx(bankCardVariants({ size, animate }), 'select-none')}>
       <motion.div
-        className="bg-gradient-radial-dark relative aspect-[1.58/1] overflow-hidden rounded-xl p-4 text-white shadow-xl shadow-slate-800"
+        className="bg-gradient-radial-dark border-l-2 border-b-1 border-slate-800 relative aspect-[1.58/1] overflow-hidden rounded-xl p-4 text-white shadow-xl shadow-slate-800"
         animate={
           animate
             ? {
@@ -38,14 +49,24 @@ const BankCard = ({ centerIcon, animate }: Props): ReactElement => {
         {/* Card content */}
         <div className="relative z-10 flex h-full flex-col justify-between">
           <div className="flex items-start justify-between">
-            <div className="text-5xl font-light">BANK APP</div>
-            <div className="font-light">John Doe</div>
-            {/* <CreditCard className="size-5 text-gray-300" /> */}
+            <div className={cx('font-light', size === 'small' ? 'text-lg' : 'text-5xl')}>
+              BANK APP
+            </div>
+            <div className={cx('font-light', size === 'small' ? 'text-xs' : '')}>John Doe</div>
           </div>
-          <div className="space-y-0 text-sm">
+          <div className={size === 'small' ? 'space-y-0 text-xs' : 'space-y-0 text-sm'}>
             <div className="flex items-end justify-between">
-              <div className="font-medium tracking-wider">•••• 2205</div>
-              <div className="text-lg font-bold italic tracking-widest">VISA</div>
+              <div className={cx("font-medium tracking-wider", size === 'small' ? 'text-xs' : 'text-xl')}>
+                •••• 2205
+              </div>
+              <div
+                className={cx(
+                  'font-bold italic tracking-widest',
+                  size === 'small' ? 'text-xs' : 'text-xl'
+                )}
+              >
+                VISA
+              </div>
             </div>
           </div>
         </div>
@@ -70,7 +91,7 @@ const BankCard = ({ centerIcon, animate }: Props): ReactElement => {
 
       {centerIcon && (
         <div className="absolute z-20 grid size-full place-items-center text-white">
-          <CreditCard className="size-12" strokeWidth={0.75} />
+          <CreditCard className={size === 'small' ? 'size-8' : 'size-12'} strokeWidth={0.75} />
         </div>
       )}
     </div>

@@ -6,12 +6,12 @@ import { COMBINE_CARDS_DESCRIPTION } from './constants';
 
 const CombineCards = () => {
   return (
-    <CardWrapper className="h-screen flex justify-center items-center gap-10">
-        <div className='px-10'>
-            <Header title='Combine All Your Cards Into One' />
-            <p>{COMBINE_CARDS_DESCRIPTION}</p>
-        </div>
-        <BankCard animate />
+    <CardWrapper className="flex h-screen items-center justify-center gap-10 px-20">
+      <div>
+        <Header title="Combine All" highlightedText='Your Cards Into One' />
+        <p>{COMBINE_CARDS_DESCRIPTION}</p>
+      </div>
+      <BankCard animate />
     </CardWrapper>
   );
 };

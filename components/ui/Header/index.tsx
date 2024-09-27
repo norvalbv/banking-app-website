@@ -1,15 +1,33 @@
 import React, { ReactElement } from 'react';
-import { cx } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-export type HeaderProps = {
+const headerVariants = cva('mb-4 font-bold', {
+  variants: {
+    size: {
+      sm: 'text-4xl',
+      md: 'text-4xl md:text-5xl',
+      lg: 'text-4xl md:text-6xl',
+    },
+    alignment: {
+      center: 'text-center',
+      left: 'text-left',
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+    alignment: 'left',
+  },
+});
+
+export type HeaderProps = VariantProps<typeof headerVariants> & {
   title: string;
   highlightedText?: string;
   className?: string;
 };
 
-const Header = ({ title, highlightedText, className }: HeaderProps): ReactElement => {
+const Header = ({ title, highlightedText, size, alignment, className }: HeaderProps): ReactElement => {
   return (
-    <h2 className={cx('mb-4 text-4xl font-bold', className)}>
+    <h2 className={headerVariants({ size, alignment, className })}>
       {title}
       {highlightedText && (
         <>

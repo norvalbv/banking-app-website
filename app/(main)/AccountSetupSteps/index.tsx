@@ -12,17 +12,17 @@ const AccountSetupSteps = (): ReactElement => {
     <CardWrapper className="mx-auto flex h-screen flex-col items-center justify-center gap-10 lg:flex-row">
       <Card
         cardKey="1."
-        headerProps={{ title: 'Verify', highlightedText: 'Your Identity' }}
+        headerProps={{ title: 'Verify', highlightedText: 'Your Identity', size: 'sm' }}
         paragraph={VERIFY_IDENTITY_DESCRIPTION}
       />
       <Card
         cardKey="2."
-        headerProps={{ title: 'Trusted Party', highlightedText: 'Management' }}
+        headerProps={{ title: 'Trusted Party', highlightedText: 'Management', size: 'sm' }}
         paragraph={TRUSTED_PARTY_DESCRIPTION}
       />
       <Card
         cardKey="3."
-        headerProps={{ title: 'Spending', highlightedText: 'Alerts & Control' }}
+        headerProps={{ title: 'Spending', highlightedText: 'Alerts & Control', size: 'sm' }}
         paragraph={ALERTS_DESCRIPTION}
       />
     </CardWrapper>
