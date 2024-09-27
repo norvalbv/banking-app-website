@@ -5,6 +5,7 @@ import AlertsSection from './AlertsSection';
 import AccountSetupSteps from './AccountSetupSteps';
 import CombineCards from './CombineCards';
 import ViewTransactionsSection from './ViewTransactionsSection';
+import SecuritySection from './SecuritySection';
 
 const Page = () => {
   return (
@@ -17,6 +18,7 @@ const Page = () => {
       <CombineCards />
       <AlertsSection />
       <ViewTransactionsSection />
+      <SecuritySection />
       <div className="absolute bottom-0 left-0 w-full">
         <div className="bg-gradient-radial-lighter h-screen scale-y-[-1] blur-xl" />
         <div className="bg-gradient-radial h-screen w-[100vw] rotate-180 scale-x-[-1]" />

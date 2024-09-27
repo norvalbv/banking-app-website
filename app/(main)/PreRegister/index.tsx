@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/input';
 import CardWrapper from '@/components/ui/CardWrapper';
+import Header from '@/components/ui/Header';
 
 const PreRegister = (): React.ReactElement => {
   const [email, setEmail] = useState('');
@@ -20,7 +21,7 @@ const PreRegister = (): React.ReactElement => {
     <CardWrapper>
       <div className="mx-auto grid h-[40rem] w-1/2 place-items-center">
         <div>
-          <h3 className="mb-6 text-4xl font-bold text-rose-500">Join Our Waitlist</h3>
+          <Header as="h3" title="Join Our Waitlist" className="text-teal-500" />
           <p className="mb-8 text-lg text-gray-600">
             Be the first to know when we launch. Sign up for early access and exclusive offers.
           </p>

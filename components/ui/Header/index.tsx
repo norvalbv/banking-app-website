@@ -7,15 +7,29 @@ const headerVariants = cva('mb-4 font-bold', {
       sm: 'text-4xl',
       md: 'text-4xl md:text-5xl',
       lg: 'text-4xl md:text-6xl',
+      xl: 'text-5xl md:text-7xl lg:text-8xl',
     },
     alignment: {
       center: 'text-center',
       left: 'text-left',
     },
+    as: {
+      h1: '',
+      h2: '',
+      h3: '',
+    },
   },
+  compoundVariants: [
+    {
+      as: 'h1',
+      size: 'xl',
+      class: 'text-6xl md:text-8xl lg:text-9xl',
+    },
+  ],
   defaultVariants: {
     size: 'md',
     alignment: 'left',
+    as: 'h2',
   },
 });
 
@@ -24,6 +38,7 @@ export type HeaderProps = VariantProps<typeof headerVariants> & {
   highlightedText?: string;
   inline?: boolean;
   className?: string;
+  as?: 'h1' | 'h2' | 'h3';
 };
 
 const Header = ({
@@ -32,19 +47,22 @@ const Header = ({
   inline,
   size,
   alignment,
+  as = 'h2',
   className,
 }: HeaderProps): ReactElement => {
+  const Component = as;
+
   return (
-    <h2 className={headerVariants({ size, alignment, className })}>
+    <Component className={headerVariants({ size, alignment, as, className })}>
       {title}
       {highlightedText && (
         <>
           {!inline && <br />}
           {inline && ' '}
-          <span className="text-rose-500">{highlightedText}</span>
+          <span className="text-teal-500">{highlightedText}</span>
         </>
       )}
-    </h2>
+    </Component>
   );
 };
 
