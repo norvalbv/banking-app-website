@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/input';
 import CardWrapper from '@/components/ui/CardWrapper';
 
-const SignUp = (): React.ReactElement => {
+const PreRegister = (): React.ReactElement => {
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,7 +34,7 @@ const SignUp = (): React.ReactElement => {
                 required
                 className="flex-grow"
               />
-              <Button type="submit">Sign Up</Button>
+              <Button type="submit">Pre Register</Button>
             </div>
             <p className="text-sm text-gray-500">
               We respect your privacy. Unsubscribe at any time.
@@ -46,4 +46,4 @@ const SignUp = (): React.ReactElement => {
   );
 };
 
-export default SignUp;
+export default PreRegister;

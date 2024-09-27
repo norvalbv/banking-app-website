@@ -9,7 +9,7 @@ export type HeaderProps = {
 
 const Header = ({ title, highlightedText, className }: HeaderProps): ReactElement => {
   return (
-    <h2 className={cx('mb-4 font-bold text-4xl', className)}>
+    <h2 className={cx('mb-4 text-4xl font-bold', className)}>
       {title}
       {highlightedText && (
         <>
