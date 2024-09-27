@@ -24,11 +24,11 @@ const MainLayout = ({ children }: Props) => {
     //     lerp: 0.02,
     //   }}
     // >
-      <div className={clsx(poppins.className, 'overflow-hidden bg-gray-100 text-gray-800')}>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-      </div>
+    <div className={clsx(poppins.className, 'overflow-hidden bg-gray-100 text-gray-800')}>
+      <Nav />
+      <main>{children}</main>
+      <Footer />
+    </div>
     // </ReactLenis>
   );
 };

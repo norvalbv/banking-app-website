@@ -19,6 +19,14 @@ body {
       radial-gradient(at 2% 61%, hsla(219, 10%, 95%, 1) 0px, transparent 50%),
       radial-gradient(at 57% 25%, hsla(210, 19%, 40%, 1) 0px, transparent 50%);
   }
+  .bg-gradient-radial-lighter {
+    background-color: hsla(300, 0%, 95%, 1);
+    background-image: radial-gradient(at 47% 44%, hsla(219, 10%, 95%, 1) 0px, transparent 50%),
+      radial-gradient(at 65% 0%, hsla(340, 100%, 76%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 50% 40%, hsla(30, 79%, 85%, 0.8) 0px, transparent 50%),
+      radial-gradient(at 27% 43%, hsla(260, 39%, 90%, 1) 0px, transparent 50%),
+      radial-gradient(at 40% 60%, hsla(190, 59%, 70%, 0.5) 0px, transparent 50%);
+  }
 }
 
 @layer base {

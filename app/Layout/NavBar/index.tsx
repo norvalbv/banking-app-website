@@ -1,38 +1,49 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { PiIcon } from 'lucide-react';
 import NavItem from './NavItem';
 import SocialIcon from './SocialIcon';
-import clsx from 'clsx';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const { scrollYProgress } = useScroll();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 100;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
+  const navWidth = useTransform(scrollYProgress, [0, 0.2], ['100%', '70%']);
+  const navBackground = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    ['rgba(255, 255, 255, 0.0)', 'rgba(255, 255, 255, 0.75)'],
+  );
+  const navShadow = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    ['0px 0px 0px rgba(0, 0, 0, 0)', '0px 4px 6px rgba(0, 0, 0, 0.1)']
+  );
+  const navBlur = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    ['blur(0px)', 'blur(8px)']
+  );
+  const navBorder = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    ['#FFFFFF0', '#FFFFFF']
+  );
 
   return (
-    <div className="fixed top-0 z-50 flex w-full justify-center">
-      <nav
-        className={clsx(
-          'mt-10 w-full px-10 py-6 transition-all duration-500 ease-in-out',
-          scrolled
-            ? 'max-w-5xl rounded-full bg-white/70 shadow-lg backdrop-blur-lg'
-            : 'bg-transparent'
-        )}
+    <div className="fixed left-0 right-0 top-0 z-50 mx-auto flex w-full max-w-screen-xl justify-center 2xl:max-w-screen-2xl">
+      <motion.nav
+        className="mx-auto mt-10 w-full rounded-full px-10 py-6"
+        style={{
+          width: navWidth,
+          background: navBackground,
+          boxShadow: navShadow,
+          backdropFilter: navBlur,
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: navBorder
+        }}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -40,11 +51,11 @@ const Navbar = () => {
               BANKING APP
             </Link>
           </div>
-          <div className="hidden items-center gap-10 md:flex">
-            <NavItem href="/enterprise">Enterprise</NavItem>
-            <NavItem href="/about">About Us</NavItem>
-            <NavItem href="/docs">Docs</NavItem>
-            <NavItem href="/blog">Blog</NavItem>
+          <div className="hidden items-center md:flex">
+            <NavItem href="/enterprise">About Us</NavItem>
+            <NavItem href="/about">Contact Us</NavItem>
+            <NavItem href="/docs">Hi</NavItem>
+            <NavItem href="/blog">Pre Register</NavItem>
           </div>
           <div className="flex items-center space-x-4">
             <SocialIcon href="https://github.com/your-repo">
@@ -55,7 +66,7 @@ const Navbar = () => {
             </SocialIcon>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </div>
   );
 };

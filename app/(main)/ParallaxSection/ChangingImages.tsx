@@ -1,12 +1,10 @@
 import React from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Device from '@/components/ui/Device';
 
-
 const ChangingImages = ({ activeSection }: { activeSection: number }) => {
   return (
-    <div className="w-full h-screen fixed top-0">
+    <div className="right-0 top-0 h-screen w-1/2 bg-blue-100">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSection}
@@ -16,7 +14,7 @@ const ChangingImages = ({ activeSection }: { activeSection: number }) => {
           transition={{ duration: 0.5 }}
           className="absolute inset-0 flex items-center justify-center"
         >
-         <Device/>
+          <Device />
         </motion.div>
       </AnimatePresence>
     </div>

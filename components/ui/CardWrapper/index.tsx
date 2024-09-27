@@ -1,13 +1,29 @@
 import clsx from 'clsx';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, forwardRef } from 'react';
 
 type Props = {
   children: ReactElement | ReactElement[];
   className?: string;
+  maxWidth?: boolean;
 };
 
-const CardWrapper = ({ children, className = 'max-w-screen-xl 2xl:max-w-screen-2xl' }: Props) => {
-  return <div className={clsx('relative z-10 px-10', className)}>{children}</div>;
-};
+const CardWrapper = forwardRef<HTMLDivElement, Props>(
+  ({ children, className, maxWidth = true }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={clsx(
+          'relative z-10 px-10',
+          className,
+          maxWidth && 'mx-auto max-w-screen-xl 2xl:max-w-screen-2xl'
+        )}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+CardWrapper.displayName = 'CardWrapper';
 
 export default CardWrapper;

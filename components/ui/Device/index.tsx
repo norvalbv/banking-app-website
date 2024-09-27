@@ -14,9 +14,8 @@ const Device = () => {
       <div className="absolute -end-[11px] top-[142px] h-[64px] w-[3px] rounded-e-lg bg-gray-800 dark:bg-gray-800"></div>
       <div className="absolute h-full w-full rounded-3xl bg-gradient-to-b from-gray-800 to-gray-900">
         <div className="absolute inset-0 rounded-[30px] bg-white">
-          <div className='mx-2 mt-28'>
-
-          <BankCard />
+          <div className="mx-2 mt-28">
+            <BankCard />
           </div>
           <Lottie
             animationData={payConfirm}
