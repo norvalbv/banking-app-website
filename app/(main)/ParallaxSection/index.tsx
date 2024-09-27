@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import DataInput from './DataInput';
@@ -9,7 +9,7 @@ import CardWrapper from '@/components/ui/CardWrapper';
 
 const Section = ({ children, onInView }: { children: React.ReactNode; onInView: () => void }) => {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.6,
     triggerOnce: false,
   });
 
@@ -24,8 +24,8 @@ const Section = ({ children, onInView }: { children: React.ReactNode; onInView: 
       ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: inView ? 1 : 0 }}
-      transition={{ duration: 1 }}
-      className="flex min-h-screen items-center justify-start"
+      transition={{ duration: 1.25 }}
+      className="flex h-screen items-center justify-center"
     >
       {children}
     </motion.div>
@@ -34,10 +34,9 @@ const Section = ({ children, onInView }: { children: React.ReactNode; onInView: 
 
 const ParallaxSection = () => {
   const [activeSection, setActiveSection] = useState<0 | 1 | 2>(0);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <CardWrapper ref={containerRef} className="bg-red-500">
+    <CardWrapper className="flex">
       <div>
         <Section onInView={() => setActiveSection(0)}>
           <DataInput />

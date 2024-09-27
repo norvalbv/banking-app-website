@@ -1,7 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
-// import ReactLenis from 'lenis/react';
+import ReactLenis from 'lenis/react';
 import { Lato } from 'next/font/google';
 import React, { ReactElement } from 'react';
 import Footer from '../Layout/Footer';
@@ -18,18 +18,13 @@ type Props = {
 
 const MainLayout = ({ children }: Props) => {
   return (
-    // <ReactLenis
-    //   root
-    //   options={{
-    //     lerp: 0.02,
-    //   }}
-    // >
-    <div className={clsx(poppins.className, 'overflow-hidden bg-gray-100 text-gray-800')}>
-      <Nav />
-      <main>{children}</main>
-      <Footer />
-    </div>
-    // </ReactLenis>
+    <ReactLenis root>
+      <div className={clsx(poppins.className, 'bg-gray-100 text-gray-800')}>
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </div>
+    </ReactLenis>
   );
 };
 

@@ -13,23 +13,15 @@ const Navbar = () => {
   const navBackground = useTransform(
     scrollYProgress,
     [0, 0.2],
-    ['rgba(255, 255, 255, 0.0)', 'rgba(255, 255, 255, 0.75)'],
+    ['rgba(255, 255, 255, 0.0)', 'rgba(255, 255, 255, 0.75)']
   );
   const navShadow = useTransform(
     scrollYProgress,
     [0, 0.2],
     ['0px 0px 0px rgba(0, 0, 0, 0)', '0px 4px 6px rgba(0, 0, 0, 0.1)']
   );
-  const navBlur = useTransform(
-    scrollYProgress,
-    [0, 0.2],
-    ['blur(0px)', 'blur(8px)']
-  );
-  const navBorder = useTransform(
-    scrollYProgress,
-    [0, 0.2],
-    ['#FFFFFF0', '#FFFFFF']
-  );
+  const navBlur = useTransform(scrollYProgress, [0, 0.2], ['blur(0px)', 'blur(8px)']);
+  const navBorder = useTransform(scrollYProgress, [0, 0.2], ['#FFFFFF0', '#FFFFFF']);
 
   return (
     <div className="fixed left-0 right-0 top-0 z-50 mx-auto flex w-full max-w-screen-xl justify-center 2xl:max-w-screen-2xl">
@@ -42,7 +34,7 @@ const Navbar = () => {
           backdropFilter: navBlur,
           borderWidth: '1px',
           borderStyle: 'solid',
-          borderColor: navBorder
+          borderColor: navBorder,
         }}
       >
         <div className="flex items-center justify-between">

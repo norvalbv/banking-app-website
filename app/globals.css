@@ -11,13 +11,22 @@ body {
     text-wrap: balance;
   }
   .bg-gradient-radial {
-    background-color: hsla(300, 0%, 95%, 1);
+    background-color: hsla(0, 0%, 95%, 1);
     background-image: radial-gradient(at 36% 17%, hsla(260, 39%, 90%, 1) 0px, transparent 50%),
       radial-gradient(at 69% 21%, hsla(190, 59%, 70%, 1) 0px, transparent 50%),
       radial-gradient(at 28% 53%, hsla(30, 79%, 85%, 1) 0px, transparent 50%),
       radial-gradient(at 65% 62%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
       radial-gradient(at 2% 61%, hsla(219, 10%, 95%, 1) 0px, transparent 50%),
       radial-gradient(at 57% 25%, hsla(210, 19%, 40%, 1) 0px, transparent 50%);
+  }
+  .bg-gradient-radial-dark {
+    background-color: hsla(0, 0%, 5%, 1);
+    background-image: radial-gradient(at 36% 17%, hsla(260, 39%, 80%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 69% 21%, hsla(190, 59%, 70%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 28% 53%, hsla(30, 79%, 85%, 0.4) 0px, transparent 50%),
+      radial-gradient(at 65% 62%, hsla(340, 100%, 76%, 0.5) 0px, transparent 50%),
+      radial-gradient(at 2% 61%, hsla(219, 10%, 95%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 57% 25%, hsla(210, 19%, 40%, 0.8) 0px, transparent 50%);
   }
   .bg-gradient-radial-lighter {
     background-color: hsla(300, 0%, 95%, 1);
