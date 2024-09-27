@@ -1,6 +1,14 @@
+import DeviceWithCardPayment from '@/components/ui/Device/DeviceWithCardPayment';
+import DeviceWithCardPaymentFail from '@/components/ui/Device/DeviceWithCardPaymentFail';
+import DeviceWithConfirmPayment from '@/components/ui/Device/DeviceWithConfirmPayment';
+import { AnimatePresence, motion } from 'framer-motion';
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Device from '@/components/ui/Device';
+
+const images = [
+  <DeviceWithCardPaymentFail key={1} />,
+  <DeviceWithConfirmPayment key={2} />,
+  <DeviceWithCardPayment key={3} />,
+];
 
 export default function ChangingImages({ activeSection }: { activeSection: number }) {
   return (
@@ -14,7 +22,7 @@ export default function ChangingImages({ activeSection }: { activeSection: numbe
           transition={{ duration: 0.5 }}
           className="flex items-center justify-center"
         >
-          <Device />
+          {images[activeSection]}
         </motion.div>
       </AnimatePresence>
     </div>
