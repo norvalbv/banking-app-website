@@ -30,7 +30,7 @@ const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement =>
   return (
     <div className={cx(bankCardVariants({ size, animate }), 'select-none')}>
       <motion.div
-        className="bg-gradient-radial-dark border-l-2 border-b-1 border-slate-800 relative aspect-[1.58/1] overflow-hidden rounded-xl p-4 text-white shadow-xl shadow-slate-800"
+        className="bg-gradient-radial-dark border-b-1 relative aspect-[1.58/1] overflow-hidden rounded-xl border-l-2 border-slate-800 p-4 text-white shadow-xl shadow-slate-800"
         animate={
           animate
             ? {
@@ -56,7 +56,12 @@ const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement =>
           </div>
           <div className={size === 'small' ? 'space-y-0 text-xs' : 'space-y-0 text-sm'}>
             <div className="flex items-end justify-between">
-              <div className={cx("font-medium tracking-wider", size === 'small' ? 'text-xs' : 'text-xl')}>
+              <div
+                className={cx(
+                  'font-medium tracking-wider',
+                  size === 'small' ? 'text-xs' : 'text-xl'
+                )}
+              >
                 •••• 2205
               </div>
               <div

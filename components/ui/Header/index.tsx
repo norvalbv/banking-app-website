@@ -25,7 +25,13 @@ export type HeaderProps = VariantProps<typeof headerVariants> & {
   className?: string;
 };
 
-const Header = ({ title, highlightedText, size, alignment, className }: HeaderProps): ReactElement => {
+const Header = ({
+  title,
+  highlightedText,
+  size,
+  alignment,
+  className,
+}: HeaderProps): ReactElement => {
   return (
     <h2 className={headerVariants({ size, alignment, className })}>
       {title}

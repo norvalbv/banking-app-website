@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '@/components/ui/Hero';
 import PreRegister from './PreRegister';
-import ParallaxSection from './ParallaxSection';
+import ParallaxSection from './AlertsSection';
 import AccountSetupSteps from './AccountSetupSteps';
 import CombineCards from './CombineCards';
 
@@ -14,7 +14,6 @@ const Page = () => {
       </div>
       <AccountSetupSteps />
       <CombineCards />
-      <div>Set up alerts</div>
       <div>View Transactions (tab; what you&apos;ll see vs trusted party)</div>
       <ParallaxSection />
       <div className="absolute bottom-0 left-0 w-full">

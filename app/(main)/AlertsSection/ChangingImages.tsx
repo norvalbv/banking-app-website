@@ -1,16 +1,20 @@
 import DeviceWithCardPayment from '@/components/ui/Device/DeviceWithCardPayment';
-import DeviceWithCardPaymentFail from '@/components/ui/Device/DeviceWithCardPaymentFail';
+import DeviceWithSetLimits from '@/components/ui/Device/DeviceWithSetLimits';
 import DeviceWithConfirmPayment from '@/components/ui/Device/DeviceWithConfirmPayment';
 import { AnimatePresence, motion } from 'framer-motion';
-import React from 'react';
+import { ReactElement } from 'react';
 
 const images = [
-  <DeviceWithCardPaymentFail key={1} />,
+  <DeviceWithSetLimits key={1} />,
   <DeviceWithConfirmPayment key={2} />,
   <DeviceWithCardPayment key={3} />,
 ];
 
-export default function ChangingImages({ activeSection }: { activeSection: number }) {
+type ChangingImagesProps = {
+  activeSection: 0 | 1 | 2;
+};
+
+const ChangingImages = ({ activeSection }: ChangingImagesProps): ReactElement => {
   return (
     <div className="sticky top-0 flex h-screen w-full items-center justify-center">
       <AnimatePresence mode="wait">
@@ -27,4 +31,6 @@ export default function ChangingImages({ activeSection }: { activeSection: numbe
       </AnimatePresence>
     </div>
   );
-}
+};
+
+export default ChangingImages;
