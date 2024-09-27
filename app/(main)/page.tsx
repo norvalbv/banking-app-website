@@ -1,9 +1,10 @@
 import React from 'react';
 import Hero from '@/components/ui/Hero';
 import PreRegister from './PreRegister';
-import ParallaxSection from './AlertsSection';
+import AlertsSection from './AlertsSection';
 import AccountSetupSteps from './AccountSetupSteps';
 import CombineCards from './CombineCards';
+import ViewTransactionsSection from './ViewTransactionsSection';
 
 const Page = () => {
   return (
@@ -14,8 +15,8 @@ const Page = () => {
       </div>
       <AccountSetupSteps />
       <CombineCards />
-      <div>View Transactions (tab; what you&apos;ll see vs trusted party)</div>
-      <ParallaxSection />
+      <AlertsSection />
+      <ViewTransactionsSection />
       <div className="absolute bottom-0 left-0 w-full">
         <div className="bg-gradient-radial-lighter h-screen scale-y-[-1] blur-xl" />
         <div className="bg-gradient-radial h-screen w-[100vw] rotate-180 scale-x-[-1]" />
