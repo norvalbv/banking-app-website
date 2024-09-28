@@ -13,8 +13,8 @@ const Hero = (): ReactElement => {
       <div className="bg-gradient-radial absolute inset-0 bg-line-mask bg-cover bg-center bg-no-repeat opacity-50" />
       <CardWrapper className="relative z-10 flex h-full flex-col justify-center">
         <div className="mb-4 flex items-center gap-6">
-          <div className="h-0.5 w-20 sm:w-32 rounded-lg bg-gray-800" />
-          <p className="font-bold text-xs 2xl:text-sm">Start Your Journey</p>
+          <div className="h-0.5 w-20 rounded-lg bg-gray-800 sm:w-32" />
+          <p className="text-xs font-bold 2xl:text-sm">Start Your Journey</p>
         </div>
         <Header
           title="Take Control"

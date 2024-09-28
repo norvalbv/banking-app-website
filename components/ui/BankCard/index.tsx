@@ -49,18 +49,13 @@ const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement =>
         {/* Card content */}
         <div className="relative z-10 flex h-full flex-col justify-between">
           <div className="flex items-start justify-between">
-            <div className={cx('font-light', size === 'sm' ? 'text-lg' : 'text-5xl')}>
-              BANK APP
-            </div>
+            <div className={cx('font-light', size === 'sm' ? 'text-lg' : 'text-5xl')}>BANK APP</div>
             <div className={cx('font-light', size === 'sm' ? 'text-xs' : '')}>John Doe</div>
           </div>
           <div className={size === 'sm' ? 'space-y-0 text-xs' : 'space-y-0 text-sm'}>
             <div className="flex items-end justify-between">
               <div
-                className={cx(
-                  'font-medium tracking-wider',
-                  size === 'sm' ? 'text-xs' : 'text-xl'
-                )}
+                className={cx('font-medium tracking-wider', size === 'sm' ? 'text-xs' : 'text-xl')}
               >
                 •••• 2205
               </div>
@@ -96,7 +91,7 @@ const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement =>
 
       {centerIcon && (
         <div className="absolute z-20 grid size-full place-items-center text-white">
-          <CreditCard className={size === 'small' ? 'size-8' : 'size-12'} strokeWidth={0.75} />
+          <CreditCard className={size === 'sm' ? 'size-8' : 'size-12'} strokeWidth={0.75} />
         </div>
       )}
     </div>

@@ -12,7 +12,7 @@ const AccountSetupSteps = (): ReactElement => {
   return (
     <CardWrapper className="mx-auto flex flex-col items-center justify-center">
       <Header title="How It" highlightedText="Works" inline className="mb-6 sm:mb-10" />
-      <div className="flex flex-col items-center justify-center lg:flex-row gap-6 md:gap-10">
+      <div className="flex flex-col items-center justify-center gap-6 md:gap-10 lg:flex-row">
         <Card
           cardKey="1."
           headerProps={{ title: 'Verify', highlightedText: 'Your Identity', size: 'sm' }}
