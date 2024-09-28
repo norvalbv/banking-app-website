@@ -4,7 +4,7 @@ import DeviceWithCardPayment from '@/components/ui/Device/DeviceWithCardPayment'
 import Header from '@/components/ui/Header';
 import React from 'react';
 
-const You = () => {
+const YouTab = () => {
   return (
     <div className="flex">
       <Header title="View Your Transactions" highlightedText="In One Place" />
@@ -13,4 +13,4 @@ const You = () => {
   );
 };
 
-export default You;
+export default YouTab;

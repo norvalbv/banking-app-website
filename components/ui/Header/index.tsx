@@ -59,7 +59,9 @@ const Header = ({
         <>
           {!inline && <br />}
           {inline && ' '}
-          <span className="text-teal-500">{highlightedText}</span>
+          <span className="bg-gradient-to-t from-teal-400 to-teal-700 bg-clip-text text-transparent">
+            {highlightedText}
+          </span>
         </>
       )}
     </Component>

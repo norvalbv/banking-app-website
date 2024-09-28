@@ -1,9 +1,9 @@
 import CardWrapper from '@/components/ui/CardWrapper';
 import Header from '@/components/ui/Header';
-import TabComponent from '@/components/ui/TabComponent';
-import { TabContent, TabHeader } from '@/components/ui/TabComponent/types';
+import TabComponent, { TabContent, TabHeader } from '@/components/ui/TabComponent';
 import React, { useMemo } from 'react';
-import You from './YouTab';
+import YouTab from './YouTab';
+import ThemTab from './ThemTab';
 
 const ViewTransactionsSection = () => {
   const tabHeaders: TabHeader[] = [
@@ -15,18 +15,18 @@ const ViewTransactionsSection = () => {
     () => [
       {
         value: 'You',
-        component: <You />,
+        component: <ThemTab />,
       },
       {
         value: 'Partner',
-        component: <You />,
+        component: <YouTab />,
       },
     ],
     []
   );
 
   return (
-    <CardWrapper className="flex h-screen w-full items-center justify-center">
+    <CardWrapper className="flex h-[50vh] w-full items-end justify-center">
       <div className="w-full">
         <Header title="View Your Recent" highlightedText="Transactions" inline />
         <TabComponent headers={tabHeaders} contents={tabContents} />

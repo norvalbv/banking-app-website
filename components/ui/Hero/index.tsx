@@ -9,9 +9,13 @@ import Header from '../Header';
 
 const Hero = (): ReactElement => {
   return (
-    <div className="relative h-screen">
-      <div className="bg-gradient-radial absolute inset-0 bg-line-mask bg-cover bg-center bg-no-repeat opacity-90" />
+    <div className="relative h-screen overflow-hidden">
+      <div className="bg-gradient-radial absolute inset-0 bg-line-mask bg-cover bg-center bg-no-repeat opacity-50" />
       <CardWrapper className="relative z-10 flex h-full flex-col justify-center">
+        <div className="mb-10 flex items-center gap-6">
+          <div className="h-1 w-32 rounded-lg bg-gray-800" />
+          <p className="font-bold">Start Your Journey</p>
+        </div>
         <Header
           title="Take Control"
           highlightedText="of Your Finances"

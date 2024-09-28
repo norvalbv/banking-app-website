@@ -34,7 +34,7 @@ const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement =>
         animate={
           animate
             ? {
-                rotateY: [0, 15, -15, 15, -15, 0],
+                rotateY: [20, 15, -15, 20, -15, 20],
                 rotateX: [0, -15, 15, -5, 15, 0],
               }
             : {}
