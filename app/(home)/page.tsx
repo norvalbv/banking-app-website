@@ -18,7 +18,7 @@ const Page = () => {
       </div>
       <AccountSetupSteps />
       <CombineCards />
-      {/* <AlertsSection /> */}
+      <AlertsSection />
       <ViewTransactionsSection />
       <SecuritySection />
       <div className="absolute bottom-0 left-0 w-full">
