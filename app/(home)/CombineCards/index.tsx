@@ -6,12 +6,12 @@ import { COMBINE_CARDS_DESCRIPTION } from './constants';
 
 const CombineCards = () => {
   return (
-    <CardWrapper className="flex h-screen 2xl:h-[50vh] items-center 2xl:items-end justify-center gap-10 px-20">
+    <CardWrapper className="flex flex-col sm:flex-row h-screen 2xl:h-[50vh] items-center 2xl:items-end justify-center gap-10 px-20">
       <div>
-        <Header title="Combine All" highlightedText="Your Cards Into One" />
-        <p>{COMBINE_CARDS_DESCRIPTION}</p>
+        <Header title="Combine All" highlightedText="Your Cards Into One" className='text-center sm:text-left' />
+        <p className='text-center sm:text-left'>{COMBINE_CARDS_DESCRIPTION}</p>
       </div>
-      <BankCard animate />
+      <BankCard animate size={'sm'} />
     </CardWrapper>
   );
 };

@@ -13,7 +13,7 @@ const CardWrapper = forwardRef<HTMLDivElement, Props>(
       <div
         ref={ref}
         className={clsx(
-          'relative z-10 px-10',
+          'relative z-10 px-6 sm:px-10',
           className,
           maxWidth && 'mx-auto max-w-screen-xl 2xl:max-w-screen-2xl'
         )}

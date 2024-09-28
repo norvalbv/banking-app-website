@@ -13,12 +13,12 @@ const Page = () => {
   return (
     <div className="relative">
       <Hero />
-      {/* <div className="absolute left-0 top-[82.5vh] w-full blur-xl">
+    <div className="absolute left-0 top-[82.5vh] w-full blur-xl">
         <div className="bg-gradient-radial-lighter h-screen" />
       </div>
       <AccountSetupSteps />
-      <CombineCards />
-      <AlertsSection />
+           <CombineCards />
+    {/*  <AlertsSection />
       <ViewTransactionsSection />
       <SecuritySection />
       <div className="absolute bottom-0 left-0 w-full">

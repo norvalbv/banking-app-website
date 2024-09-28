@@ -8,8 +8,8 @@ import { cva, cx, type VariantProps } from 'class-variance-authority';
 const bankCardVariants = cva('perspective-1000 relative mx-auto w-full', {
   variants: {
     size: {
-      large: 'max-w-[30rem]',
-      small: 'max-w-[15rem]',
+      lg: 'max-w-[30rem]',
+      sm: 'max-w-[15rem]',
     },
     animate: {
       true: '-rotate-3 skew-x-6',
@@ -17,7 +17,7 @@ const bankCardVariants = cva('perspective-1000 relative mx-auto w-full', {
     },
   },
   defaultVariants: {
-    size: 'large',
+    size: 'lg',
     animate: false,
   },
 });
@@ -49,17 +49,17 @@ const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement =>
         {/* Card content */}
         <div className="relative z-10 flex h-full flex-col justify-between">
           <div className="flex items-start justify-between">
-            <div className={cx('font-light', size === 'small' ? 'text-lg' : 'text-5xl')}>
+            <div className={cx('font-light', size === 'sm' ? 'text-lg' : 'text-5xl')}>
               BANK APP
             </div>
-            <div className={cx('font-light', size === 'small' ? 'text-xs' : '')}>John Doe</div>
+            <div className={cx('font-light', size === 'sm' ? 'text-xs' : '')}>John Doe</div>
           </div>
-          <div className={size === 'small' ? 'space-y-0 text-xs' : 'space-y-0 text-sm'}>
+          <div className={size === 'sm' ? 'space-y-0 text-xs' : 'space-y-0 text-sm'}>
             <div className="flex items-end justify-between">
               <div
                 className={cx(
                   'font-medium tracking-wider',
-                  size === 'small' ? 'text-xs' : 'text-xl'
+                  size === 'sm' ? 'text-xs' : 'text-xl'
                 )}
               >
                 •••• 2205
@@ -67,7 +67,7 @@ const BankCard = ({ size, animate, centerIcon }: BankCardProps): ReactElement =>
               <div
                 className={cx(
                   'font-bold italic tracking-widest',
-                  size === 'small' ? 'text-xs' : 'text-xl'
+                  size === 'sm' ? 'text-xs' : 'text-xl'
                 )}
               >
                 VISA
