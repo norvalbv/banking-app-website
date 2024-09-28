@@ -8,7 +8,7 @@ import React from 'react';
 const YouTab = () => {
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="mt-10 gap-10 md:w-1/2 md:m-0 mb-6">
+      <div className="mb-6 mt-10 gap-10 md:m-0 md:w-1/2">
         <Header title="View Your Transactions" highlightedText="In One Place" />
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi quod neque assumenda

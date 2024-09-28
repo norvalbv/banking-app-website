@@ -66,11 +66,13 @@ const Button = ({
       // eslint-disable-next-line react/button-has-type
       type={buttonType}
       disabled={loading}
-      className={cn(buttonVariants({
-        variant,
-        size,
-        className,
-      }))}
+      className={cn(
+        buttonVariants({
+          variant,
+          size,
+          className,
+        })
+      )}
       onClick={onClick}
     >
       {iconPosition === 'left' && renderIcon('left')}

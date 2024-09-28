@@ -11,7 +11,7 @@ const ThemTab = () => {
       <div className="md:w-1/2">
         <DeviceWithCardPayment />
       </div>
-      <div className="mt-10 gap-10 md:w-1/2 md:m-0 mb-6">
+      <div className="mb-6 mt-10 gap-10 md:m-0 md:w-1/2">
         <Header title="Ensure You're" highlightedText="Always On Track" className="md:text-right" />
         <p className="md:text-right">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi quod neque assumenda
