@@ -8,7 +8,7 @@ import useWindowSize from '@/lib/hooks/useWindowSize';
 const CombineCards = () => {
   const { windowSize } = useWindowSize();
 
-  console.log(windowSize)
+  console.log(windowSize);
   return (
     <CardWrapper className="flex h-screen flex-col items-center justify-center gap-10 px-20 md:flex-row 2xl:h-[50vh] 2xl:items-end">
       <div>
