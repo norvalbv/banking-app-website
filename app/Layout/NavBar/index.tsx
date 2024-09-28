@@ -72,8 +72,8 @@ const Navbar = () => {
                   transition={{ duration: 0.2 }}
                   className="size-6"
                 >
-                  <button 
-                    type='button' 
+                  <button
+                    type="button"
                     onClick={toggleMenu}
                     aria-expanded={isMenuOpen}
                     aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}

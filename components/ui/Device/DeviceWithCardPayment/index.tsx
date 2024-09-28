@@ -8,7 +8,7 @@ const DeviceWithCardPayment = () => {
   return (
     <Device>
       <div className="mx-2 mt-28">
-        <BankCard size="small" />
+        <BankCard size="sm" />
       </div>
       <Lottie
         animationData={payConfirm}

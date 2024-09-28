@@ -27,7 +27,7 @@ const TabComponent = ({ headers, contents }: TabComponentProps) => {
         {headers.map((header) => (
           <Tabs.Trigger
             key={header.value}
-            className="relative flex h-14 w-full select-none items-center justify-center bg-white/30 font-bold transition-all duration-300 before:absolute before:-bottom-1 before:left-0 before:h-1 before:w-full before:bg-teal-500 before:opacity-0 before:content-[''] first:rounded-tl-xl last:rounded-tr-xl hover:bg-white/30 data-[state=active]:before:z-10 data-[state=active]:before:opacity-100"
+            className="relative flex h-14 w-full select-none items-center justify-center bg-white/30 font-bold transition-all duration-300 before:absolute before:-bottom-1 before:left-0 before:h-1 before:w-full before:rounded-lg before:bg-teal-500 before:opacity-0 before:shadow-sm before:shadow-teal-500 before:content-[''] first:rounded-tl-xl last:rounded-tr-xl hover:bg-white/30 data-[state=active]:before:z-10 data-[state=active]:before:opacity-100"
             value={header.value}
           >
             {header.label}

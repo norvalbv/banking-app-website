@@ -22,7 +22,7 @@ const MainLayout = ({ children }: Props) => {
       <div className={clsx(poppins.className, 'bg-gray-100 text-gray-800')}>
         <Nav />
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </ReactLenis>
   );

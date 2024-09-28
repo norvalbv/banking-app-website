@@ -18,14 +18,14 @@ const Page = () => {
       </div>
       <AccountSetupSteps />
       <CombineCards />
-      {/*  <AlertsSection />
+      {/* <AlertsSection /> */}
       <ViewTransactionsSection />
       <SecuritySection />
       <div className="absolute bottom-0 left-0 w-full">
         <div className="bg-gradient-radial-lighter h-screen scale-y-[-1] blur-xl" />
         <div className="bg-gradient-radial h-screen w-[100vw] rotate-180 scale-x-[-1]" />
       </div>
-      <PreRegister /> */}
+      <PreRegister />
     </div>
   );
 };
