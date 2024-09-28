@@ -18,12 +18,12 @@ export type TabContent = {
 
 const TabComponent = ({ headers, contents }: TabComponentProps) => {
   return (
-    <Tabs.Root className="w-full border border-white rounded-lg" defaultValue={headers[0].value}>
+    <Tabs.Root className="w-full rounded-lg border border-white" defaultValue={headers[0].value}>
       <Tabs.List className="flex" aria-label="Manage your account">
         {headers.map((header) => (
           <Tabs.Trigger
             key={header.value}
-            className="flex w-full select-none items-center justify-center h-14 font-bold first:rounded-tl-lg last:rounded-tr-lg bg-white/70 relative before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-full before:h-1 before:bg-teal-500 before:opacity-0 data-[state=active]:before:opacity-100"
+            className="relative flex h-14 w-full select-none items-center justify-center bg-white/70 font-bold before:absolute before:-bottom-1 before:left-0 before:h-1 before:w-full before:bg-teal-500 before:opacity-0 before:content-[''] first:rounded-tl-lg last:rounded-tr-lg data-[state=active]:before:opacity-100"
             value={header.value}
           >
             {header.label}
@@ -33,7 +33,7 @@ const TabComponent = ({ headers, contents }: TabComponentProps) => {
       {contents.map((content) => (
         <Tabs.Content
           key={content.value}
-          className="h-[40rem] bg-white/70 border-t-4 border-white p-6"
+          className="border-t-4 border-white bg-white/70 p-6"
           value={content.value}
         >
           {content.component}

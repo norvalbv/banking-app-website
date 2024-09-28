@@ -15,11 +15,11 @@ const ViewTransactionsSection = () => {
     () => [
       {
         value: 'You',
-        component: <ThemTab />,
+        component: <YouTab />,
       },
       {
         value: 'Partner',
-        component: <YouTab />,
+        component: <ThemTab />,
       },
     ],
     []
