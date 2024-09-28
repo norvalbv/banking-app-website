@@ -18,32 +18,28 @@ const PreRegister = (): React.ReactElement => {
   };
 
   return (
-    <CardWrapper>
-      <div className="mx-auto grid h-[40rem] w-1/2 place-items-center">
-        <div>
-          <Header as="h3" title="Join Our Waitlist" className="text-teal-500" />
-          <p className="mb-8 text-lg text-gray-600">
-            Be the first to know when we launch. Sign up for early access and exclusive offers.
-          </p>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-grow"
-              />
-              <Button type="submit">Pre Register</Button>
-            </div>
-            <p className="text-sm text-gray-500">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
-          </form>
+    <CardWrapper className='h-[50vh] lg:w-1/2 md:w-2/3 sm:w-3/4 w-full'>
+      <Header as="h3" title="Join Our Waitlist" className="text-teal-500" />
+      <p className="mb-8">
+        Be the first to know when we launch. Sign up for early access and exclusive offers.
+      </p>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="flex gap-4">
+          <Input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className='flex-1'
+          />
+          <Button type="submit">Pre Register</Button>
         </div>
-      </div>
-    </CardWrapper>
+        <p className="text-sm text-gray-500">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+      </form>
+  </CardWrapper>
   );
 };
 

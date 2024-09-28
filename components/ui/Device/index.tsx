@@ -10,7 +10,7 @@ type Props = {
 
 const Device = ({ children, variant = 'light' }: Props): ReactElement => {
   return (
-    <div className="relative mx-auto h-[500px] w-[250px] rounded-[2.5rem] border-[8px] border-gray-800 bg-gray-800 dark:border-gray-800 2xl:h-[660px] 2xl:w-[330px]">
+    <div className="relative mx-auto h-[440px] sm:h-[500px] w-[220px] sm:w-[250px] rounded-[2.5rem] border-[8px] border-gray-800 bg-gray-800 dark:border-gray-800 2xl:h-[660px] 2xl:w-[330px]">
       <div className="absolute -start-[11px] top-[72px] h-[32px] w-[3px] rounded-s-lg bg-gray-800 dark:bg-gray-800"></div>
       <div className="absolute -start-[11px] top-[124px] h-[46px] w-[3px] rounded-s-lg bg-gray-800 dark:bg-gray-800"></div>
       <div className="absolute -start-[11px] top-[178px] h-[46px] w-[3px] rounded-s-lg bg-gray-800 dark:bg-gray-800"></div>
