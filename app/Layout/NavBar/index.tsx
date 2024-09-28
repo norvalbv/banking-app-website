@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <div className="fixed left-0 right-0 top-0 z-50 mx-auto flex w-full max-w-screen-xl justify-center 2xl:max-w-screen-2xl">
       <motion.nav
-        className="mx-auto mt-10 w-full rounded-full px-10 py-6"
+        className="mx-auto mt-6 w-full rounded-full px-10 py-2 2xl:py-6"
         style={{
           width: navWidth,
           background: navBackground,

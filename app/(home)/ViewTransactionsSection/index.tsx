@@ -26,7 +26,7 @@ const ViewTransactionsSection = () => {
   );
 
   return (
-    <CardWrapper className="flex h-[50vh] w-full items-end justify-center">
+    <CardWrapper className="flex w-full items-end justify-center">
       <div className="w-full">
         <Header title="View Your Recent" highlightedText="Transactions" inline />
         <TabComponent headers={tabHeaders} contents={tabContents} />

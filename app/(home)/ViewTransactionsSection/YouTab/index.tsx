@@ -2,6 +2,7 @@
 
 import DeviceWithCardPayment from '@/components/ui/Device/DeviceWithCardPayment';
 import Header from '@/components/ui/Header';
+import { Badge } from 'lucide-react';
 import React from 'react';
 
 const YouTab = () => {
@@ -18,6 +19,9 @@ const YouTab = () => {
       <div className='w-1/2'>
         <DeviceWithCardPayment />
       </div>
+      <Badge className="absolute -left-28 -bottom-28 size-64 text-gray-100" strokeWidth={0.5} />
+      <Badge className="absolute -left-32 -bottom-32 size-64 text-gray-200" strokeWidth={0.5} />
+      <Badge className="absolute -left-36 -bottom-36 size-64 text-gray-300" strokeWidth={0.5} />
     </div>
   );
 };

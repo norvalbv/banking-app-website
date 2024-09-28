@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Hero from '@/components/ui/Hero';
+import Hero from '@/app/(home)/Hero';
 import PreRegister from './PreRegister';
 import AlertsSection from './AlertsSection';
 import AccountSetupSteps from './AccountSetupSteps';
@@ -13,7 +13,7 @@ const Page = () => {
   return (
     <div className="relative">
       <Hero />
-      <div className="absolute left-0 top-[82.5vh] w-full blur-xl">
+      {/* <div className="absolute left-0 top-[82.5vh] w-full blur-xl">
         <div className="bg-gradient-radial-lighter h-screen" />
       </div>
       <AccountSetupSteps />
@@ -25,7 +25,7 @@ const Page = () => {
         <div className="bg-gradient-radial-lighter h-screen scale-y-[-1] blur-xl" />
         <div className="bg-gradient-radial h-screen w-[100vw] rotate-180 scale-x-[-1]" />
       </div>
-      <PreRegister />
+      <PreRegister /> */}
     </div>
   );
 };
