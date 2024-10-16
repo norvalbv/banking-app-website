@@ -16,26 +16,6 @@ const montserrat = Montserrat({
 const montserratAlt1 = localFont({
   src: [
     {
-      path: '../../public/fonts/MontserratAlt1-Thin.woff2',
-      weight: '100',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MontserratAlt1-ExtraLight.woff2',
-      weight: '200',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MontserratAlt1-Light.woff2',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MontserratAlt1-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
       path: '../../public/fonts/MontserratAlt1-Medium.woff2',
       weight: '500',
       style: 'normal',
@@ -43,21 +23,6 @@ const montserratAlt1 = localFont({
     {
       path: '../../public/fonts/MontserratAlt1-SemiBold.woff2',
       weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MontserratAlt1-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MontserratAlt1-ExtraBold.woff2',
-      weight: '800',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/MontserratAlt1-Black.woff2',
-      weight: '900',
       style: 'normal',
     },
   ],

@@ -1,6 +1,5 @@
 'use client';
 
-import { Button } from '@/components/ui/Button';
 import CardWrapper from '@/components/ui/CardWrapper';
 import Header from '@/components/ui/Header';
 import gradientBall from '@/lib/constants/gradient-ball.json';
@@ -10,12 +9,20 @@ import { SECURITY_DESCRIPTION } from './constants';
 
 const SecuritySection = (): ReactElement => {
   return (
-    <CardWrapper className="flex h-screen flex-col items-center justify-center md:flex-row">
-      <Lottie animationData={gradientBall} loop={true} className="size-72 flex-1 md:size-96" />
-      <div className="flex-1">
-        <Header title="Your Money" highlightedText="In Trusted Hands." />
-        <p className="my-4">{SECURITY_DESCRIPTION}</p>
-        <Button>Tell me more</Button>
+    <CardWrapper className="flex min-h-screen flex-col items-center justify-center px-4 py-8 md:flex-row md:px-8">
+      <Lottie
+        animationData={gradientBall}
+        loop={true}
+        className="mb-8 w-full max-w-[18rem] md:mb-0 md:w-1/2 md:max-w-[24rem]"
+      />
+      <div className="w-full text-center md:w-1/2 md:text-left">
+        <Header
+          title="Your Money"
+          highlightedText="In Trusted Hands."
+          className="mb-4 md:mb-6 max-md:text-center"
+          size="md"
+        />
+        <p className="mb-6 text-sm md:text-base">{SECURITY_DESCRIPTION}</p>
       </div>
     </CardWrapper>
   );

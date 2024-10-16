@@ -56,9 +56,9 @@ const AlertsSection = () => {
         </Section>
         <Section onInView={() => setActiveSection(2)}>
           <InfoSection
-            title="Shared"
+            title="You're always in"
             highlightedText="Control"
-            description="Your trusted party manages your finances, helping you stay within budget while you retain oversight."
+            description="Your trusted party helps manage your finances, but only shares what you want them to."
             inline
           />
         </Section>

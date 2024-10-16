@@ -17,17 +17,17 @@ const FinanceOverview = (): ReactElement => {
           as="h2"
           className="text-center"
         />
-        <p className="mb-12 max-w-2xl md:text-lg">
+        <p className="mb-8 max-w-2xl text-sm sm:mb-12 md:text-lg">
           Get a clear picture of your financial health with our intuitive dashboard. Track expenses,
           monitor savings, and make informed decisions about your money.
         </p>
-        <div className="mb-16 flex flex-wrap justify-center gap-12">
+        <div className="mb-8 flex w-full flex-col items-center justify-center gap-8 sm:mb-16 sm:flex-row sm:gap-12">
           <Card className="w-full max-w-md">
             <CardHeader>
               <CardTitle>
                 <Header
                   title="Expense Tracking"
-                  size="sm"
+                  size="xs"
                   as="h3"
                   margin="none"
                   fontWeight="normal"
@@ -37,7 +37,7 @@ const FinanceOverview = (): ReactElement => {
             </CardHeader>
             <CardContent>
               <ChartContainer
-                className="h-[300px] w-full"
+                className="h-[200px] w-full sm:h-[300px]"
                 config={{ expenses: { color: '#14b8a6' } }}
               >
                 <ResponsiveContainer width="100%" height="100%">
@@ -62,7 +62,7 @@ const FinanceOverview = (): ReactElement => {
                   </BarChart>
                 </ResponsiveContainer>
               </ChartContainer>
-              <p className="mt-4 text-sm">
+              <p className="mt-4 text-xs sm:text-sm">
                 Monitor your monthly expenses to identify spending patterns and areas for potential
                 savings.
               </p>
@@ -73,7 +73,7 @@ const FinanceOverview = (): ReactElement => {
               <CardTitle>
                 <Header
                   title="Savings Growth"
-                  size="sm"
+                  size="xs"
                   as="h3"
                   margin="none"
                   fontWeight="normal"
@@ -83,7 +83,7 @@ const FinanceOverview = (): ReactElement => {
             </CardHeader>
             <CardContent>
               <ChartContainer
-                className="h-[300px] w-full"
+                className="h-[200px] w-full sm:h-[300px]"
                 config={{ savings: { color: '#14b8a6' } }}
               >
                 <ResponsiveContainer width="100%" height="100%">
@@ -114,7 +114,7 @@ const FinanceOverview = (): ReactElement => {
                   </LineChart>
                 </ResponsiveContainer>
               </ChartContainer>
-              <p className="mt-4 text-sm">
+              <p className="mt-4 text-xs sm:text-sm">
                 Watch your savings grow over time and stay motivated to reach your financial goals.
               </p>
             </CardContent>

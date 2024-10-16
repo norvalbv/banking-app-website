@@ -41,7 +41,7 @@ const headerVariants = cva('', {
 });
 
 export type HeaderProps = VariantProps<typeof headerVariants> & {
-  title: string;
+  title?: string;
   highlightedText?: string;
   inline?: boolean;
   icon?: LucideIcon;
@@ -75,10 +75,10 @@ const Header = ({
           <Icon />
         </span>
       )}
-      {title}
+      {title && title}
       {highlightedText && (
         <>
-          {!inline && <br />}
+          {!inline && title && <br />}
           {inline && '\u00A0'}
           {highlightedText.split(' ').map((word, index) => (
             <span
