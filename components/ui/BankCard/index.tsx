@@ -121,7 +121,7 @@ const BankCard = ({
       className={cx(
         bankCardVariants({ size, skew }),
         'flex select-none flex-col',
-        background.includes('dark') ? 'text-white' : 'text-black',
+        background.includes('dark') ? 'text-white' : 'text-black'
       )}
     >
       <motion.div
@@ -229,7 +229,7 @@ const CardFront = ({
 
       <article className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <h1 className="truncate text-[10px] md:text-sm font-medium sm:text-xs">{userName}</h1>
+          <h1 className="truncate text-[10px] font-medium sm:text-xs md:text-sm">{userName}</h1>
         </div>
         <p className="truncate text-xs font-semibold tracking-wider sm:text-base">
           {account?.cardNumber && showAllDetails ? (
@@ -276,7 +276,7 @@ const CardBack = ({
         </div>
       </div>
     </div>
-    <p className="mt-2 text-[10px] sm:text-xs uppercase">© 2024 ARIAN</p>
+    <p className="mt-2 text-[10px] uppercase sm:text-xs">© 2024 ARIAN</p>
   </div>
 );
 

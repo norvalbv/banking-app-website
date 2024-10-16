@@ -16,12 +16,7 @@ const Hero = (): ReactElement => {
           <div className="h-0.5 w-20 rounded-lg bg-gray-800 sm:w-32" />
           <p className="text-xs font-bold 2xl:text-sm">Start Your Journey</p>
         </div>
-        <Header
-          title="Take Control"
-          highlightedText="of Your Finances"
-          size="xl"
-          as="h1"
-        />
+        <Header title="Take Control" highlightedText="of Your Finances" size="xl" as="h1" />
         <p className="mb-8 max-w-md text-xs md:text-sm">
           Achieve financial peace of mind with trusted oversight. Whether you&apos;re managing
           spending limits or getting help from a trusted party, our app ensures your financial

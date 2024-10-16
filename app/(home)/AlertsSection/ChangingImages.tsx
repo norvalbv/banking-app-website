@@ -9,7 +9,10 @@ import Image from 'next/image';
 import { ReactElement } from 'react';
 
 const images = [
-  <div className="relative grid h-full w-full grid-cols-1 grid-rows-7 gap-2 sm:grid-cols-5 bg-red-500" key={1}>
+  <div
+    className="relative grid h-full w-full grid-cols-1 grid-rows-7 gap-2 bg-red-500 sm:grid-cols-5"
+    key={1}
+  >
     <Image
       src={addNewLimit}
       alt="Add New Limit"
@@ -49,9 +52,16 @@ const images = [
       <TransactionsTable transactions={transactionMockData} />
     </div>
     <div className="absolute right-0 top-28 w-2/3">
-        <Header title="What Your Trusted Party Sees" size="sm" className='bg-white/30 backdrop-blur p-4 rounded-lg' />
-      <div className="bg-white/30 backdrop-blur-lg rounded-b-lg">
-        <TransactionsTable transactions={transactionMockData} blurCategories={["Income", "Bills & Utilities"]} />
+      <Header
+        title="What Your Trusted Party Sees"
+        size="sm"
+        className="rounded-lg bg-white/30 p-4 backdrop-blur"
+      />
+      <div className="rounded-b-lg bg-white/30 backdrop-blur-lg">
+        <TransactionsTable
+          transactions={transactionMockData}
+          blurCategories={['Income', 'Bills & Utilities']}
+        />
       </div>
     </div>
   </div>,

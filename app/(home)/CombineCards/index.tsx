@@ -16,7 +16,7 @@ const CombineCards = () => {
       setCardSize(window.innerWidth > 900 ? 'lg' : 'sm');
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
@@ -24,7 +24,7 @@ const CombineCards = () => {
 
   return (
     <CardWrapper className="flex h-screen flex-col items-center justify-center gap-10 px-20 md:flex-row 2xl:h-[50vh] 2xl:items-end">
-      <div className='flex-1'>
+      <div className="flex-1">
         <Header
           title="Combine All"
           highlightedText="Your Cards Into One"

@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <div className="fixed left-0 right-0 top-0 z-50 mx-auto flex w-full max-w-screen-xl justify-center 2xl:max-w-screen-2xl">
       <motion.nav
-        className="mx-auto mt-2 sm:mt-4 md:mt-6 w-full rounded-full px-4 sm:px-6 md:px-10 py-2 md:py-3 2xl:py-4"
+        className="mx-auto mt-2 w-full rounded-full px-4 py-2 sm:mt-4 sm:px-6 md:mt-6 md:px-10 md:py-3 2xl:py-4"
         style={{
           width: navWidth,
           background: navBackground,
