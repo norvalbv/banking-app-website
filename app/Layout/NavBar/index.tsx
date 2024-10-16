@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import NavItem from './NavItem';
+import { smoothScrollTo } from '@/lib/utils';
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
@@ -31,6 +32,11 @@ const Navbar = () => {
   const menuRef = useRef<HTMLDivElement>(null);
 
   useOutsideClick({ refs: [menuRef], onBlur: () => setIsMenuOpen(false) });
+
+  const handleSmoothScroll = (id: string) => {
+    smoothScrollTo(id, 2000);
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="fixed left-0 right-0 top-0 z-50 mx-auto flex w-full max-w-screen-xl justify-center 2xl:max-w-screen-2xl">
@@ -80,7 +86,7 @@ const Navbar = () => {
             </motion.div>
             <div className="hidden md:flex md:space-x-4">
               <NavItem href="/about">Contact Us</NavItem>
-              <NavItem href="#pre-register">Pre Register</NavItem>
+              <button onClick={() => handleSmoothScroll('pre-register')}>Pre Register</button>
             </div>
           </div>
         </div>
@@ -97,7 +103,12 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-2">
               <NavItem href="/about">Contact Us</NavItem>
-              <NavItem href="#pre-register">Pre Register</NavItem>
+              <button
+                onClick={() => handleSmoothScroll('pre-register')}
+                className="flex h-9 items-center justify-center rounded-xl p-6 text-base font-semibold capitalize text-gray-700 transition-all duration-500 ease-in-out hover:text-gray-900"
+              >
+                Pre Register
+              </button>
             </div>
           </motion.div>
         )}

@@ -30,7 +30,9 @@ const CombineCards = () => {
           highlightedText="Your Cards Into One"
           className="text-center md:text-left"
         />
-        <p className="mt-4 text-center text-sm sm:text-base md:text-left">{COMBINE_CARDS_DESCRIPTION}</p>
+        <p className="mt-4 text-center text-sm sm:text-base md:text-left">
+          {COMBINE_CARDS_DESCRIPTION}
+        </p>
       </div>
       <div className="w-full md:w-1/2 lg:w-3/5">
         {isClient && (

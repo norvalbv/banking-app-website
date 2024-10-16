@@ -19,7 +19,7 @@ const SecuritySection = (): ReactElement => {
         <Header
           title="Your Money"
           highlightedText="In Trusted Hands."
-          className="mb-4 md:mb-6 max-md:text-center"
+          className="mb-4 max-md:text-center md:mb-6"
           size="md"
         />
         <p className="mb-6 text-sm md:text-base">{SECURITY_DESCRIPTION}</p>
