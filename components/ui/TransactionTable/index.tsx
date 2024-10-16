@@ -43,9 +43,10 @@ const CategoryBadge = ({ category }: CategoryBadgeProps) => {
 
 type TransactionTableProps = {
 	transactions: Transaction[];
+	blurCategories?: string[];
 };
 
-const TransactionsTable = ({ transactions }: TransactionTableProps) => {
+const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTableProps) => {
 	const groupedTransactions = transactions.reduce(
 		(acc, transaction) => {
 			const date = new Date(transaction.date).toDateString();
@@ -57,6 +58,16 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
 		},
 		{} as Record<string, Transaction[]>,
 	);
+
+	const shouldBlur = (category: string) => blurCategories.includes(category);
+
+	const blurText = (text: string, category: string) => {
+		return shouldBlur(category) ? text.replace(/\S/g, '•') : text;
+	};
+
+	const blurAmount = (amount: string, category: string) => {
+		return shouldBlur(category) ? '••••' : amount;
+	};
 
 	return (
 		<div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
@@ -88,8 +99,7 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
 								</TableRow>
 								{dateTransactions.map((t: Transaction) => {
 									const amount = formatAmount(t.amount);
-									const isDebit = t.type === "debit";
-									const isCredit = t.type === "credit";
+									const isDebit = t.transactionType === "debit";
 
 									return (
 										<TableRow
@@ -107,7 +117,7 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
 														{t.image ? (
 															<Image
 																src={t.image}
-																alt={t.name}
+																alt={blurText(t.name, t.category)}
 																width={20}
 																height={20}
 																className="rounded-full"
@@ -118,7 +128,7 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
 													</div>
 													<div className="ml-4">
 														<p className="text-sm font-medium text-gray-900 truncate max-w-[200px]">
-															{removeSpecialCharacters(t.name)}
+															{blurText(removeSpecialCharacters(t.name), t.category)}
 														</p>
 													</div>
 												</div>
@@ -132,7 +142,7 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
 														: "text-green-600",
 												)}
 											>
-												{isDebit ? `-${amount}` : isCredit ? amount : amount}
+												{blurAmount(isDebit ? `-${amount}` : amount, t.category)}
 											</TableCell>
 
 											<TableCell className="px-4 py-3 whitespace-nowrap">

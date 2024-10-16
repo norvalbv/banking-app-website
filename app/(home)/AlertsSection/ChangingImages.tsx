@@ -1,4 +1,5 @@
 import Alert from '@/components/ui/Alert';
+import Header from '@/components/ui/Header';
 import TransactionsTable from '@/components/ui/TransactionTable';
 import { transactionMockData } from '@/lib/mocks/transactionMockData';
 import addNewLimit from '@/public/images/addNewLimit.png';
@@ -20,7 +21,7 @@ const images = [
       className="col-span-5 row-start-7 rounded-lg shadow-lg"
     />
   </div>,
-  <div className="relative grid h-[36rem] w-full grid-cols-1 sm:grid-cols-6 bg-red-500" key={2}>
+  <div className="relative grid h-[36rem] w-full grid-cols-1 sm:grid-cols-6" key={2}>
     <Alert
       variant="info"
       className="col-span-5 col-start-1 col-end-6 h-fit"
@@ -42,10 +43,18 @@ const images = [
       description="The payment has been confirmed, you are able to attempt the payment again."
     />
   </div>,
-  <div className="relative grid h-full w-full grid-cols-1 grid-rows-5 gap-2 sm:grid-cols-5 bg-red-500" key={3}>
-    <TransactionsTable transactions={transactionMockData} />
+  <div className="relative grid h-full w-full grid-cols-1 grid-rows-7 gap-2 sm:grid-cols-5" key={3}>
+    <div className="absolute left-0 top-0 w-2/3">
+      <Header title="Your Transactions" size="sm" />
+      <TransactionsTable transactions={transactionMockData} />
+    </div>
+    <div className="absolute right-0 top-28 w-2/3">
+        <Header title="What Your Trusted Party Sees" size="sm" className='bg-white/30 backdrop-blur p-4 rounded-lg' />
+      <div className="bg-white/30 backdrop-blur-lg rounded-b-lg">
+        <TransactionsTable transactions={transactionMockData} blurCategories={["Income", "Bills & Utilities"]} />
+      </div>
+    </div>
   </div>,
-  // <DeviceWithCardPayment key={4} />,
 ];
 
 type ChangingImagesProps = {
