@@ -1,11 +1,12 @@
 'use client';
 
-import Link from 'next/link';
-import { PiIcon, Menu, X } from 'lucide-react';
-import NavItem from './NavItem';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { useRef, useState } from 'react';
+import Logo from '@/components/ui/Logo';
 import useOutsideClick from '@/lib/hooks/useOutsideClick';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
+import NavItem from './NavItem';
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
@@ -47,15 +48,9 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2 font-bold italic lg:text-xl">
-              BANKING APP
+            <Link href="/" className="text-2xl">
+              <Logo />
             </Link>
-          </div>
-          <div className="hidden items-center lg:flex">
-            <NavItem href="/enterprise">About Us</NavItem>
-            <NavItem href="/about">Contact Us</NavItem>
-            <NavItem href="/docs">Hi</NavItem>
-            <NavItem href="/blog">Pre Register</NavItem>
           </div>
           <div className="flex items-center space-x-4">
             <motion.div
@@ -83,8 +78,9 @@ const Navbar = () => {
                 </motion.div>
               </AnimatePresence>
             </motion.div>
-            <PiIcon className="hidden h-6 w-6 lg:block" />
-            <PiIcon className="hidden h-6 w-6 lg:block" />
+            <NavItem href="/enterprise">About Us</NavItem>
+            <NavItem href="/about">Contact Us</NavItem>
+            <NavItem href="/blog">Pre Register</NavItem>
           </div>
         </div>
       </motion.nav>
@@ -101,7 +97,6 @@ const Navbar = () => {
             <NavItem href="/enterprise">About Us</NavItem>
             <NavItem href="/about">Contact Us</NavItem>
             <NavItem href="/docs">Hi</NavItem>
-            <NavItem href="/blog">Pre Register</NavItem>
           </motion.div>
         )}
       </AnimatePresence>

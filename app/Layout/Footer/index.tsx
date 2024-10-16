@@ -11,19 +11,19 @@ const Footer = (): React.ReactElement => {
             <p className="text-sm text-gray-500 sm:text-base">
               Making the world a better place through innovative solutions.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {['Instagram', 'Facebook', 'LinkedIn'].map((social) => (
                 <a key={social} href="#" className="text-gray-500 hover:text-teal-500">
                   <span className="text-sm sm:text-base">{social}</span>
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="grid grid-cols-2 gap-8 md:w-2/3 md:grid-cols-3">
             {[
-              { title: 'Solutions', items: ['Product', 'Services', 'Technology'] },
-              { title: 'Support', items: ['Pricing', 'Documentation', 'Guides'] },
-              { title: 'Company', items: ['About', 'Blog', 'Jobs'] },
+              { title: 'Solutions', items: [] },
+              { title: 'Support', items: ['Contact Us'] },
+              { title: 'Company', items: [] },
             ].map((section) => (
               <div key={section.title}>
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-800">

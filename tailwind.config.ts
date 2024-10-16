@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+				sans: ["var(--font-montserrat)", "sans-serif"],
+				"sans-alt": ["var(--font-montserrat-alt1)", "sans-serif"],
+			},
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
