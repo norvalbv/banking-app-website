@@ -8,6 +8,7 @@ import AccountSetupSteps from './AccountSetupSteps';
 import CombineCards from './CombineCards';
 import ViewTransactionsSection from './ViewTransactionsSection';
 import SecuritySection from './SecuritySection';
+import FinanceOverview from './FinanceOverview';
 
 const Page = () => {
   return (
@@ -18,6 +19,7 @@ const Page = () => {
       </div>
       <AccountSetupSteps />
       <CombineCards />
+      <FinanceOverview />
       <AlertsSection />
       <ViewTransactionsSection />
       <SecuritySection />

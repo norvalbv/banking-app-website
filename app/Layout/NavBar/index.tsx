@@ -12,7 +12,7 @@ const Navbar = () => {
   const { scrollYProgress } = useScroll();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navWidth = useTransform(scrollYProgress, [0, 0.15], ['100%', '75%']);
+  const navWidth = useTransform(scrollYProgress, [0, 0.15], ['100%', '90%']);
   const navBackground = useTransform(
     scrollYProgress,
     [0, 0.15],
@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <div className="fixed left-0 right-0 top-0 z-50 mx-auto flex w-full max-w-screen-xl justify-center 2xl:max-w-screen-2xl">
       <motion.nav
-        className="mx-auto mt-6 w-full rounded-full px-6 py-2 sm:px-10 2xl:py-6"
+        className="mx-auto mt-2 sm:mt-4 md:mt-6 w-full rounded-full px-4 sm:px-6 md:px-10 py-2 md:py-3 2xl:py-4"
         style={{
           width: navWidth,
           background: navBackground,
@@ -48,15 +48,15 @@ const Navbar = () => {
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl">
+            <Link href="/" className="text-xl sm:text-2xl">
               <Logo />
             </Link>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <motion.div
               whileTap={{ scale: 0.9 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className="block lg:hidden"
+              className="block md:hidden"
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -78,8 +78,10 @@ const Navbar = () => {
                 </motion.div>
               </AnimatePresence>
             </motion.div>
-            <NavItem href="/about">Contact Us</NavItem>
-            <NavItem href="#pre-register">Pre Register</NavItem>
+            <div className="hidden md:flex md:space-x-4">
+              <NavItem href="/about">Contact Us</NavItem>
+              <NavItem href="#pre-register">Pre Register</NavItem>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -91,10 +93,12 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 right-0 top-full mx-auto mt-2 w-[75%] rounded-xl border border-white bg-white/75 p-4 underline shadow-lg backdrop-blur-[0.5rem]"
+            className="absolute left-0 right-0 top-full mx-auto mt-2 w-[90%] rounded-xl border border-white bg-white/75 p-4 shadow-lg backdrop-blur-[0.5rem]"
           >
-            <NavItem href="/about">Contact Us</NavItem>
-            <NavItem href="#pre-register">Pre Register</NavItem>
+            <div className="flex flex-col space-y-2">
+              <NavItem href="/about">Contact Us</NavItem>
+              <NavItem href="#pre-register">Pre Register</NavItem>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

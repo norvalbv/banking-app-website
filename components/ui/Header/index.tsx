@@ -1,71 +1,95 @@
-import React, { ReactElement } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { type VariantProps, cva, cx } from "class-variance-authority";
+import type { LucideIcon } from "lucide-react";
+import React, { type ReactElement } from "react";
 
-const headerVariants = cva('mb-4 font-bold', {
-  variants: {
-    size: {
-      sm: 'text-4xl',
-      md: 'text-4xl md:text-5xl',
-      lg: 'text-4xl md:text-6xl',
-      xl: 'text-5xl md:text-7xl lg:text-8xl',
-    },
-    alignment: {
-      center: 'text-center',
-      left: 'text-left',
-    },
-    as: {
-      h1: '',
-      h2: '',
-      h3: '',
-    },
-  },
-  compoundVariants: [
-    {
-      as: 'h1',
-      size: 'xl',
-      class: 'text-6xl md:text-8xl lg:text-9xl',
-    },
-  ],
-  defaultVariants: {
-    size: 'md',
-    alignment: 'left',
-    as: 'h2',
-  },
+const headerVariants = cva("", {
+	variants: {
+		size: {
+			xs: "text-xl",
+			sm: "text-2xl",
+			md: "text-3xl sm:text-4xl",
+			lg: "text-3xl sm:text-4xl lg:text-6xl",
+			xl: "text-6xl md:text-8xl lg:text-9xl",
+		},
+		alignment: {
+			center: "text-center",
+			left: "text-left",
+		},
+		margin: {
+			none: "",
+			sm: "mb-4",
+			md: "mb-8",
+		},
+		fontWeight: {
+			normal: "font-normal",
+			medium: "font-semibold",
+			bold: "font-bold",
+		},
+		as: {
+			h1: "",
+			h2: "",
+			h3: "",
+		},
+	},
+	defaultVariants: {
+		fontWeight: "bold",
+		size: "lg",
+		alignment: "left",
+		as: "h2",
+		margin: "sm",
+	},
 });
 
 export type HeaderProps = VariantProps<typeof headerVariants> & {
-  title: string;
-  highlightedText?: string;
-  inline?: boolean;
+	title: string;
+	highlightedText?: string;
+	inline?: boolean;
+	icon?: LucideIcon;
   className?: string;
-  as?: 'h1' | 'h2' | 'h3';
 };
 
 const Header = ({
-  title,
-  highlightedText,
-  inline,
-  size,
-  alignment,
-  as = 'h2',
+	title,
+	highlightedText,
+	size,
+	alignment,
+	inline,
+	as,
+	icon: Icon,
+	fontWeight,
+	margin,
   className,
 }: HeaderProps): ReactElement => {
-  const Component = as;
+	const Component = as || "h2";
 
-  return (
-    <Component className={headerVariants({ size, alignment, as, className })}>
-      {title}
-      {highlightedText && (
-        <>
-          {!inline && <br />}
-          {inline && ' '}
-          <span className="bg-gradient-to-t from-teal-400 to-teal-700 bg-clip-text text-transparent">
-            {highlightedText}
-          </span>
-        </>
-      )}
-    </Component>
-  );
+	return (
+		<Component
+			className={cx(
+				headerVariants({ size, margin, alignment, as, fontWeight }),
+				Icon && "flex items-center",
+				className,
+			)}
+		>
+			{Icon && (
+				<span className="mr-2">
+					<Icon />
+				</span>
+			)}
+			{title}
+			{highlightedText && (
+				<>
+					{!inline && <br />}
+					{inline && "\u00A0"}
+					{highlightedText.split(' ').map((word, index) => (
+						<span key={index} className="bg-gradient-to-t inline-block from-teal-400 to-teal-700 bg-clip-text text-transparent">
+							{word}
+							{index < highlightedText.split(' ').length - 1 && "\u00A0"}
+						</span>
+					))}
+				</>
+			)}
+		</Component>
+	);
 };
 
 export default Header;

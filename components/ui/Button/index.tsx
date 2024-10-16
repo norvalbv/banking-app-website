@@ -76,7 +76,7 @@ const Button = ({
       onClick={onClick}
     >
       {iconPosition === 'left' && renderIcon('left')}
-      <span>{children}</span>
+      <span className='text-sm md:text-base'>{children}</span>
       {loading && <Loading className="ml-2 size-4" />}
       {iconPosition === 'right' && renderIcon('right')}
     </button>

@@ -21,9 +21,8 @@ const Hero = (): ReactElement => {
           highlightedText="of Your Finances"
           size="xl"
           as="h1"
-          className="mb-4"
         />
-        <p className="mb-8 max-w-md">
+        <p className="mb-8 max-w-md text-xs md:text-sm">
           Achieve financial peace of mind with trusted oversight. Whether you&apos;re managing
           spending limits or getting help from a trusted party, our app ensures your financial
           health is secured.
