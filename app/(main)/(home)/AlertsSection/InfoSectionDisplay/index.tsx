@@ -22,7 +22,7 @@ const InfoSectionDisplay = ({ activeSection }: InfoSectionDisplayProps): ReactEl
   }, [activeSection]);
 
   return (
-    <div className="sticky top-0 flex h-screen w-full items-center justify-center max-sm:hidden">
+    <div className="sticky top-0 flex h-screen w-full items-center justify-center max-lg:hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSection}

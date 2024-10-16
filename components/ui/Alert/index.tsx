@@ -42,8 +42,8 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                 : 'from-teal-500/10'
         } to-transparent`}
       />
-      <div className="relative flex items-center p-4">
-        <div className="flex-1">
+      <div className="relative flex flex-col sm:flex-row items-start sm:items-center p-4">
+        <div className="flex-1 w-full sm:w-auto">
           {title && <AlertTitle>{title}</AlertTitle>}
           {description && <AlertDescription>{description}</AlertDescription>}
           {buttonText && <AlertButton onClick={onButtonClick}>{buttonText}</AlertButton>}
@@ -56,7 +56,7 @@ Alert.displayName = 'Alert';
 
 const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h5 ref={ref} className={cn('text-lg font-semibold', className)} {...props} />
+    <h5 ref={ref} className={cn('text-base sm:text-lg font-semibold', className)} {...props} />
   )
 );
 AlertTitle.displayName = 'AlertTitle';
@@ -67,7 +67,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('mt-1 text-sm text-gray-700 dark:text-gray-300', className)}
+    className={cn('mt-1 text-xs sm:text-sm text-gray-700 dark:text-gray-300', className)}
     {...props}
   />
 ));
@@ -80,15 +80,15 @@ const AlertButton = React.forwardRef<
   <button
     ref={ref}
     className={cn(
-      'mt-3 inline-flex items-center rounded-md py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2',
-      'hover:bg-current/10 text-inherit focus:ring-current',
+      'mt-3 inline-flex items-center rounded-md py-2 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2',
+      'hover:bg-current/10 text-inherit focus:ring-current w-full sm:w-auto justify-center justify-start',
       className
     )}
     {...props}
   >
     {props.children}
     <svg
-      className="-mr-0.5 ml-2 h-4 w-4"
+      className="-mr-0.5 ml-2 h-3 w-3 sm:h-4 sm:w-4"
       fill="currentColor"
       viewBox="0 0 20 20"
       aria-hidden="true"

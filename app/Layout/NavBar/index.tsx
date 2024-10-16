@@ -85,7 +85,7 @@ const Navbar = () => {
               </AnimatePresence>
             </motion.div>
             <div className="hidden md:flex md:space-x-4">
-              <NavItem href="/about">Contact Us</NavItem>
+              <NavItem href="/contact-us">Contact Us</NavItem>
               <button onClick={() => handleSmoothScroll('pre-register')}>Pre Register</button>
             </div>
           </div>
@@ -102,7 +102,7 @@ const Navbar = () => {
             className="absolute left-0 right-0 top-full mx-auto mt-2 w-[90%] rounded-xl border border-white bg-white/75 p-4 shadow-lg backdrop-blur-[0.5rem]"
           >
             <div className="flex flex-col space-y-2">
-              <NavItem href="/about">Contact Us</NavItem>
+              <NavItem href="/contact-us">Contact Us</NavItem>
               <button
                 onClick={() => handleSmoothScroll('pre-register')}
                 className="flex h-9 items-center justify-center rounded-xl p-6 text-base font-semibold capitalize text-gray-700 transition-all duration-500 ease-in-out hover:text-gray-900"

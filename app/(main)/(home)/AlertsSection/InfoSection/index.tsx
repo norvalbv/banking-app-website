@@ -29,9 +29,9 @@ const InfoSection = ({
     }
   }, [activeSection]);
   return (
-    <div className="flex w-full items-center justify-between px-8">
+    <div className="flex w-full items-center justify-between sm:px-8">
       <div>
-      <div className="sm:hidden">{section}</div>
+      <div className="lg:hidden">{section}</div>
         <Header {...headerProps} size="lg" />
         <p className="mb-6 text-gray-500">{description}</p>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Hero from '@/app/(home)/Hero';
+import Hero from '@/app/(main)/(home)/Hero';
 import PreRegister from './PreRegister';
 import AlertsSection from './AlertsSection';
 import AccountSetupSteps from './AccountSetupSteps';
