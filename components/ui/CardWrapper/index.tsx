@@ -5,10 +5,11 @@ type Props = {
   children: ReactElement | ReactElement[];
   className?: string;
   maxWidth?: boolean;
+  id?: string;
 };
 
 const CardWrapper = forwardRef<HTMLDivElement, Props>(
-  ({ children, className, maxWidth = true }, ref) => {
+  ({ children, className, maxWidth = true, id }, ref) => {
     return (
       <div
         ref={ref}
@@ -17,6 +18,7 @@ const CardWrapper = forwardRef<HTMLDivElement, Props>(
           className,
           maxWidth && 'mx-auto max-w-screen-xl 2xl:max-w-screen-2xl'
         )}
+        id={id}
       >
         {children}
       </div>

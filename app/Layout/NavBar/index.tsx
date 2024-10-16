@@ -78,9 +78,8 @@ const Navbar = () => {
                 </motion.div>
               </AnimatePresence>
             </motion.div>
-            <NavItem href="/enterprise">About Us</NavItem>
             <NavItem href="/about">Contact Us</NavItem>
-            <NavItem href="/blog">Pre Register</NavItem>
+            <NavItem href="#pre-register">Pre Register</NavItem>
           </div>
         </div>
       </motion.nav>
@@ -94,9 +93,8 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
             className="absolute left-0 right-0 top-full mx-auto mt-2 w-[75%] rounded-xl border border-white bg-white/75 p-4 underline shadow-lg backdrop-blur-[0.5rem]"
           >
-            <NavItem href="/enterprise">About Us</NavItem>
             <NavItem href="/about">Contact Us</NavItem>
-            <NavItem href="/docs">Hi</NavItem>
+            <NavItem href="#pre-register">Pre Register</NavItem>
           </motion.div>
         )}
       </AnimatePresence>

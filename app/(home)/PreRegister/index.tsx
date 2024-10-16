@@ -18,7 +18,7 @@ const PreRegister = (): React.ReactElement => {
   };
 
   return (
-    <CardWrapper className="h-[50vh] w-full sm:w-3/4 md:w-2/3 lg:w-1/2">
+    <CardWrapper className="h-[50vh] w-full sm:w-3/4 md:w-2/3 lg:w-1/2" id="pre-register">
       <Header as="h3" title="Join Our Waitlist" className="text-teal-500" />
       <p className="mb-8">
         Be the first to know when we launch. Sign up for early access and exclusive offers.

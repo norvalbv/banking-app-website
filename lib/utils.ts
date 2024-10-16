@@ -35,3 +35,13 @@ export function smoothScrollTo(elementId: string, duration = 1000) {
 
   requestAnimationFrame(scrollStep);
 }
+
+export function formatAmount(amount: number): string {
+  const formatter = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 2,
+  });
+
+  return formatter.format(amount);
+}

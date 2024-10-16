@@ -3,22 +3,22 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-const alertVariants = cva(
-  'relative w-full rounded-lg border shadow-lg mb-6 overflow-hidden',
-  {
-    variants: {
-      variant: {
-        default: 'bg-white border-teal-200 text-gray-800 dark:bg-gray-800 dark:border-teal-800 dark:text-gray-100',
-        destructive: 'bg-white border-red-200 text-red-800 dark:bg-gray-800 dark:border-red-800 dark:text-red-200',
-        succeeded: 'bg-white border-green-400 text-green-800 dark:bg-gray-800 dark:border-green-800 dark:text-green-200',
-        info: 'bg-white border-blue-400 text-blue-800 dark:bg-gray-800 dark:border-blue-800 dark:text-blue-200',
-      },
+const alertVariants = cva('relative w-full rounded-lg border shadow-lg mb-6 overflow-hidden', {
+  variants: {
+    variant: {
+      default:
+        'bg-white border-teal-200 text-gray-800 dark:bg-gray-800 dark:border-teal-800 dark:text-gray-100',
+      destructive:
+        'bg-white border-red-200 text-red-800 dark:bg-gray-800 dark:border-red-800 dark:text-red-200',
+      succeeded:
+        'bg-white border-green-400 text-green-800 dark:bg-gray-800 dark:border-green-800 dark:text-green-200',
+      info: 'bg-white border-blue-400 text-blue-800 dark:bg-gray-800 dark:border-blue-800 dark:text-blue-200',
     },
-    defaultVariants: {
-      variant: 'default',
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
 
 type AlertProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof alertVariants> & {
@@ -30,27 +30,23 @@ type AlertProps = React.HTMLAttributes<HTMLDivElement> &
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   ({ className, variant, title, description, buttonText, onButtonClick, ...props }, ref) => (
-    <div
-      ref={ref}
-      role="alert"
-      className={cn(alertVariants({ variant }), className)}
-      {...props}
-    >
-      <div className={`absolute inset-0 bg-gradient-to-r ${
-        variant === 'destructive' ? 'from-red-500/10' :
-        variant === 'succeeded' ? 'from-green-500/10' :
-        variant === 'info' ? 'from-blue-500/10' :
-        'from-teal-500/10'
-      } to-transparent`} />
+    <div ref={ref} role="alert" className={cn(alertVariants({ variant }), className)} {...props}>
+      <div
+        className={`absolute inset-0 bg-gradient-to-r ${
+          variant === 'destructive'
+            ? 'from-red-500/10'
+            : variant === 'succeeded'
+              ? 'from-green-500/10'
+              : variant === 'info'
+                ? 'from-blue-500/10'
+                : 'from-teal-500/10'
+        } to-transparent`}
+      />
       <div className="relative flex items-center p-4">
         <div className="flex-1">
           {title && <AlertTitle>{title}</AlertTitle>}
           {description && <AlertDescription>{description}</AlertDescription>}
-          {buttonText && (
-            <AlertButton onClick={onButtonClick}>
-              {buttonText}
-            </AlertButton>
-          )}
+          {buttonText && <AlertButton onClick={onButtonClick}>{buttonText}</AlertButton>}
         </div>
       </div>
     </div>
@@ -60,11 +56,7 @@ Alert.displayName = 'Alert';
 
 const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h5
-      ref={ref}
-      className={cn('text-lg font-semibold', className)}
-      {...props}
-    />
+    <h5 ref={ref} className={cn('text-lg font-semibold', className)} {...props} />
   )
 );
 AlertTitle.displayName = 'AlertTitle';
@@ -73,7 +65,11 @@ const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('mt-1 text-sm text-gray-700 dark:text-gray-300', className)} {...props} />
+  <div
+    ref={ref}
+    className={cn('mt-1 text-sm text-gray-700 dark:text-gray-300', className)}
+    {...props}
+  />
 ));
 AlertDescription.displayName = 'AlertDescription';
 
@@ -84,15 +80,15 @@ const AlertButton = React.forwardRef<
   <button
     ref={ref}
     className={cn(
-      'inline-flex items-center rounded-md py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 mt-3',
-      'text-inherit hover:bg-current/10 focus:ring-current',
+      'mt-3 inline-flex items-center rounded-md py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2',
+      'hover:bg-current/10 text-inherit focus:ring-current',
       className
     )}
     {...props}
   >
     {props.children}
     <svg
-      className="ml-2 -mr-0.5 h-4 w-4"
+      className="-mr-0.5 ml-2 h-4 w-4"
       fill="currentColor"
       viewBox="0 0 20 20"
       aria-hidden="true"

@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { ReactElement } from 'react';
 
 const images = [
-  <div className="relative grid h-full w-full grid-cols-1 sm:grid-cols-5 grid-rows-5 gap-2" key={1}>
+  <div className="relative grid h-full w-full grid-cols-1 grid-rows-5 gap-2 sm:grid-cols-5" key={1}>
     <Image
       src={addNewLimit}
       alt="Add New Limit"
