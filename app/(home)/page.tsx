@@ -6,7 +6,6 @@ import PreRegister from './PreRegister';
 import AlertsSection from './AlertsSection';
 import AccountSetupSteps from './AccountSetupSteps';
 import CombineCards from './CombineCards';
-import ViewTransactionsSection from './ViewTransactionsSection';
 import SecuritySection from './SecuritySection';
 import FinanceOverview from './FinanceOverview';
 
@@ -21,7 +20,6 @@ const Page = () => {
       <CombineCards />
       <FinanceOverview />
       <AlertsSection />
-      <ViewTransactionsSection />
       <SecuritySection />
       <div className="absolute bottom-0 left-0 w-full">
         <div className="bg-gradient-radial-lighter h-screen scale-y-[-1] blur-xl" />
