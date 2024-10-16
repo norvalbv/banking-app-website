@@ -1,27 +1,28 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactElement, useMemo } from 'react';
-import AlertsSection from '..';
+import AlertsSection from '../DataPoints/Alerts';
 import CustomLimits from '../DataPoints/CustomLimits';
 import Transactions from '../DataPoints/Transactions';
+import { ActiveSection } from '../InfoSection';
 
 type InfoSectionDisplayProps = {
-  activeSection: 0 | 1 | 2;
+  activeSection: ActiveSection;
 };
 
 const InfoSectionDisplay = ({ activeSection }: InfoSectionDisplayProps): ReactElement => {
   const section = useMemo(() => {
     switch (activeSection) {
-      case 0:
+      case 'limits':
         return <CustomLimits />;
-      case 1:
+      case 'alerts':
         return <AlertsSection />;
-      case 2:
+      case 'transactions':
         return <Transactions />;
     }
   }, [activeSection]);
 
   return (
-    <div className="sticky top-0 flex h-screen w-full items-center justify-center">
+    <div className="sticky top-0 flex h-screen w-full items-center justify-center max-sm:hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeSection}

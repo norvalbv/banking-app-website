@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-export const Section = ({ children, onInView }: { children: React.ReactNode; onInView: () => void }) => {
+export const Section = ({
+  children,
+  onInView,
+}: {
+  children: React.ReactNode;
+  onInView: () => void;
+}) => {
   const { ref, inView } = useInView({
     threshold: 0.5,
     triggerOnce: false,

@@ -1,43 +1,46 @@
 'use client';
 
 import CardWrapper from '@/components/ui/CardWrapper';
-import React, { useState } from 'react';
-import ChangingImages from './InfoSectionDisplay';
-import InfoSection from './InfoSection';
+import React, { ReactElement, useState } from 'react';
+import InfoSection, { ActiveSection } from './InfoSection';
+import InfoSectionDisplay from './InfoSectionDisplay';
 import { Section } from './Section';
 
-const AlertsSection = () => {
-  const [activeSection, setActiveSection] = useState<0 | 1 | 2>(0);
+const AlertsSection = (): ReactElement => {
+  const [activeSection, setActiveSection] = useState<ActiveSection>('limits');
 
   return (
     <CardWrapper className="flex">
       <div>
-        <Section onInView={() => setActiveSection(0)}>
+        <Section onInView={() => setActiveSection('limits')}>
           <InfoSection
             title="Set Custom"
             highlightedText="Limits"
             description="Define spending limits with your trusted party to ensure your finances stay on track."
             inline
+            activeSection="limits"
           />
         </Section>
-        <Section onInView={() => setActiveSection(1)}>
+        <Section onInView={() => setActiveSection('alerts')}>
           <InfoSection
             title="Real-Time"
             highlightedText="Alerts"
             description="Get notified immediately when spending limits are exceeded. Your trusted party will be alerted to take action."
             inline
+            activeSection="alerts"
           />
         </Section>
-        <Section onInView={() => setActiveSection(2)}>
+        <Section onInView={() => setActiveSection('transactions')}>
           <InfoSection
             title="You're always in"
             highlightedText="Control"
             description="Your trusted party helps manage your finances, but only shares what you want them to."
             inline
+            activeSection="transactions"
           />
         </Section>
       </div>
-      <ChangingImages activeSection={activeSection} />
+      <InfoSectionDisplay activeSection={activeSection} />
     </CardWrapper>
   );
 };
