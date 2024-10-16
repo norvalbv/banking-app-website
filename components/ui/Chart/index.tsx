@@ -69,7 +69,7 @@ ChartContainer.displayName = "Chart"
 
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(
-    ([_, config]) => config.theme || config.color
+    ([, itemConfig]) => itemConfig.theme || itemConfig.color
   )
 
   if (!colorConfig.length) {
@@ -118,28 +118,17 @@ const ChartTooltipContent = React.forwardRef<
       active,
       payload,
       className,
-      indicator = "dot",
-      hideLabel = false,
       hideIndicator = false,
       label,
-      labelFormatter,
-      labelClassName,
-      formatter,
       color,
-      nameKey,
-      labelKey,
     },
     ref
   ) => {
-    const { config } = useChart()
-
     if (!active || !payload?.length) {
       return null
     }
 
     const [item] = payload
-    const key = `${labelKey || item.dataKey || item.name || "value"}`
-    const itemConfig = getPayloadConfigFromPayload(config, item, key)
     const value = item.value
 
     return (
@@ -157,7 +146,7 @@ const ChartTooltipContent = React.forwardRef<
           {!hideIndicator && (
             <div
               className="h-3 w-3 rounded-full"
-              style={{ backgroundColor: color || item.fill || item.color }}
+              style={{ backgroundColor: color || item.color }}
             />
           )}
           <span className="font-medium tabular-nums">
