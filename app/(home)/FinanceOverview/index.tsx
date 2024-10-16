@@ -1,105 +1,12 @@
-import React, { ReactElement, useEffect, useRef } from 'react';
+import React, { ReactElement } from 'react';
 import CardWrapper from '@/components/ui/CardWrapper';
 import Header from '@/components/ui/Header';
 import { PoundSterling, TrendingUp } from 'lucide-react';
-import Chart from 'chart.js/auto';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/AreaChart/Card';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/Chart';
+import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 const FinanceOverview = (): ReactElement => {
-  const expenseChartRef = useRef<HTMLCanvasElement>(null);
-  const savingsChartRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    let expenseChart: Chart | null = null;
-    let savingsChart: Chart | null = null;
-
-    if (expenseChartRef.current && savingsChartRef.current) {
-      const expenseCtx = expenseChartRef.current.getContext('2d');
-      const savingsCtx = savingsChartRef.current.getContext('2d');
-
-      if (expenseCtx && savingsCtx) {
-        expenseChart = new Chart(expenseCtx, {
-          type: 'bar',
-          data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-              label: 'Monthly Expenses',
-              data: [1200, 1100, 1300, 1000, 1400, 1200],
-              backgroundColor: 'rgba(20, 184, 166, 0.6)',
-              borderColor: 'rgb(20, 184, 166)',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            scales: {
-              y: {
-                beginAtZero: true,
-                grid: {
-                  color: 'rgba(20, 184, 166, 0.1)',
-                },
-              },
-              x: {
-                grid: {
-                  display: false,
-                },
-              },
-            },
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-          }
-        });
-
-        savingsChart = new Chart(savingsCtx, {
-          type: 'line',
-          data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-              label: 'Savings Growth',
-              data: [500, 800, 1200, 1500, 2000, 2500],
-              fill: true,
-              backgroundColor: 'rgba(20, 184, 166, 0.1)',
-              borderColor: 'rgb(20, 184, 166)',
-              tension: 0.4
-            }]
-          },
-          options: {
-            responsive: true,
-            scales: {
-              y: {
-                beginAtZero: true,
-                grid: {
-                  color: 'rgba(20, 184, 166, 0.1)',
-                },
-              },
-              x: {
-                grid: {
-                  display: false,
-                },
-              },
-            },
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-          }
-        });
-      }
-    }
-
-    return () => {
-      if (expenseChart) {
-        expenseChart.destroy();
-      }
-      if (savingsChart) {
-        savingsChart.destroy();
-      }
-    };
-  }, []);
-
   return (
     <CardWrapper>
       <div className="flex flex-col items-center text-center">
@@ -115,34 +22,86 @@ const FinanceOverview = (): ReactElement => {
           Track expenses, monitor savings, and make informed decisions about your money.
         </p>
         <div className="mb-16 flex flex-wrap justify-center gap-12">
-          <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
-            <div className="flex items-center mb-4">
-              <Header
-                title="Expense Tracking"
-                size="sm"
-                as="h3"
-                margin="none"
-                fontWeight="normal"
-                icon={PoundSterling}
-              />
-            </div>
-            <canvas ref={expenseChartRef} className="mb-4" />
-            <p className="text-sm">Monitor your monthly expenses to identify spending patterns and areas for potential savings.</p>
-          </div>
-          <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
-            <div className="flex items-center mb-4">
-              <Header
-                title="Savings Growth"
-                size="sm"
-                as="h3"
-                margin="none"
-                fontWeight="normal"
-                icon={TrendingUp}
-              />
-            </div>
-            <canvas ref={savingsChartRef} className="mb-4" />
-            <p className="text-sm">Watch your savings grow over time and stay motivated to reach your financial goals.</p>
-          </div>
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <CardTitle>
+                <Header
+                  title="Expense Tracking"
+                  size="sm"
+                  as="h3"
+                  margin="none"
+                  fontWeight="normal"
+                  icon={PoundSterling}
+                />
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ChartContainer className="h-[300px] w-full" config={{ expenses: { color: '#14b8a6' } }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { month: 'Jan', expenses: 1200 },
+                      { month: 'Feb', expenses: 1100 },
+                      { month: 'Mar', expenses: 1300 },
+                      { month: 'Apr', expenses: 1000 },
+                      { month: 'May', expenses: 1400 },
+                      { month: 'Jun', expenses: 1200 },
+                    ]}
+                    margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+                  >
+                    <XAxis dataKey="month" axisLine={false} tickLine={false} />
+                    <YAxis axisLine={false} tickLine={false} width={30} />
+                    <Bar dataKey="expenses" fill="#14b8a6" radius={[4, 4, 0, 0]} />
+                    <ChartTooltip
+                      cursor={{ fill: 'rgba(20, 184, 166, 0.1)' }}
+                      content={<ChartTooltipContent />}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+              <p className="mt-4 text-sm">Monitor your monthly expenses to identify spending patterns and areas for potential savings.</p>
+            </CardContent>
+          </Card>
+          <Card className="w-full max-w-md">
+            <CardHeader>
+              <CardTitle>
+                <Header
+                  title="Savings Growth"
+                  size="sm"
+                  as="h3"
+                  margin="none"
+                  fontWeight="normal"
+                  icon={TrendingUp}
+                />
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ChartContainer className="h-[300px] w-full" config={{ savings: { color: '#14b8a6' } }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={[
+                      { month: 'Jan', savings: 500 },
+                      { month: 'Feb', savings: 800 },
+                      { month: 'Mar', savings: 1200 },
+                      { month: 'Apr', savings: 1500 },
+                      { month: 'May', savings: 2000 },
+                      { month: 'Jun', savings: 2500 },
+                    ]}
+                    margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+                  >
+                    <XAxis dataKey="month" axisLine={false} tickLine={false} />
+                    <YAxis axisLine={false} tickLine={false} width={30} />
+                    <Line type="monotone" dataKey="savings" stroke="#14b8a6" strokeWidth={2} dot={false} />
+                    <ChartTooltip
+                      cursor={{ stroke: '#14b8a6', strokeWidth: 2 }}
+                      content={<ChartTooltipContent />}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+              <p className="mt-4 text-sm">Watch your savings grow over time and stay motivated to reach your financial goals.</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </CardWrapper>
