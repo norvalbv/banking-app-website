@@ -21,7 +21,7 @@ const FinanceOverview = (): ReactElement => {
           Get a clear picture of your financial health with our intuitive dashboard. Track expenses,
           monitor savings, and make informed decisions about your money.
         </p>
-        <div className="mb-8 md:mb-16 flex w-full flex-col md:flex-row items-center justify-center gap-8 md:gap-12 flex-wrap">
+        <div className="mb-8 flex w-full flex-col flex-wrap items-center justify-center gap-8 md:mb-16 md:flex-row md:gap-12">
           <Card className="w-full max-w-sm">
             <CardHeader>
               <CardTitle>
@@ -37,7 +37,7 @@ const FinanceOverview = (): ReactElement => {
             </CardHeader>
             <CardContent>
               <ChartContainer
-                className="h-[150px] sm:h-[200px] w-full"
+                className="h-[150px] w-full sm:h-[200px]"
                 config={{ expenses: { color: '#14b8a6' } }}
               >
                 <ResponsiveContainer width="100%" height="100%">
@@ -82,7 +82,7 @@ const FinanceOverview = (): ReactElement => {
             </CardHeader>
             <CardContent>
               <ChartContainer
-                className="h-[150px] sm:h-[200px] w-full"
+                className="h-[150px] w-full sm:h-[200px]"
                 config={{ savings: { color: '#14b8a6' } }}
               >
                 <ResponsiveContainer width="100%" height="100%">

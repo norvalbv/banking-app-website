@@ -246,7 +246,7 @@ const CardFront = ({
       </article>
     </div>
 
-    <div className="absolute bottom-0 text-sm lg:text-base right-0 flex flex-col items-end justify-between rounded-r-2xl bg-cover bg-center bg-no-repeat py-5 pr-5">
+    <div className="absolute bottom-0 right-0 flex flex-col items-end justify-between rounded-r-2xl bg-cover bg-center bg-no-repeat py-5 pr-5 text-sm lg:text-base">
       VISA
     </div>
   </>

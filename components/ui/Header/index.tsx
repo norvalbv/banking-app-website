@@ -5,7 +5,7 @@ import React, { type ReactElement } from 'react';
 const headerVariants = cva('', {
   variants: {
     size: {
-      xs: 'text-xl',
+      xs: 'text-lg sm:text-xl',
       sm: 'text-2xl',
       md: 'text-3xl sm:text-4xl',
       lg: 'text-3xl sm:text-4xl lg:text-6xl',

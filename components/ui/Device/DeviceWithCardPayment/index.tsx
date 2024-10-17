@@ -27,7 +27,7 @@ const DeviceWithCardPayment = () => {
           showAllDetails
           userName="John Doe"
           showBalance={false}
-        />{' '}
+        />
       </div>
       <Lottie
         animationData={payConfirm}

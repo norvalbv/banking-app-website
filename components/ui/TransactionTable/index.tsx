@@ -65,17 +65,17 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
   };
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm scale-75 sm:scale-100">
+    <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
       <Table>
         <TableHeader className="bg-gray-50">
           <TableRow>
-            <TableHead className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+            <TableHead className="px-2 py-2 text-left text-xs font-medium uppercase tracking-wider text-gray-500 md:px-4 md:py-3">
               Transaction
             </TableHead>
-            <TableHead className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+            <TableHead className="px-2 py-2 text-left text-xs font-medium uppercase tracking-wider text-gray-500 md:px-4 md:py-3">
               Amount
             </TableHead>
-            <TableHead className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+            <TableHead className="hidden px-2 py-2 text-left text-xs font-medium uppercase tracking-wider text-gray-500 md:table-cell md:px-4 md:py-3">
               Category
             </TableHead>
           </TableRow>
@@ -86,7 +86,7 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
               <TableRow>
                 <TableCell
                   colSpan={3}
-                  className="bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700"
+                  className="bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 md:px-4 md:py-2 md:text-sm"
                 >
                   {formatDateTime(new Date(date)).dateTime}
                 </TableCell>
@@ -105,23 +105,23 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
                         : 'bg-green-50 hover:bg-green-100'
                     )}
                   >
-                    <TableCell className="whitespace-nowrap px-4 py-3">
-                      <div className="flex items-center gap-3">
-                        <div className="flex size-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-200">
+                    <TableCell className="whitespace-nowrap px-2 py-2 md:px-4 md:py-3">
+                      <div className="flex items-center gap-2 md:gap-3">
+                        <div className="flex size-6 flex-shrink-0 items-center justify-center rounded-full bg-gray-200 md:size-8">
                           {t.image ? (
                             <Image
                               src={t.image}
                               alt={blurText(t.name, t.category)}
-                              width={20}
-                              height={20}
+                              width={16}
+                              height={16}
                               className="rounded-full"
                             />
                           ) : (
-                            <PoundSterling className="size-4 text-gray-500" />
+                            <PoundSterling className="size-3 text-gray-500 md:size-4" />
                           )}
                         </div>
-                        <div className="ml-4">
-                          <p className="max-w-[200px] truncate text-sm font-medium text-gray-900">
+                        <div className="ml-2 md:ml-4">
+                          <p className="max-w-[100px] truncate text-xs font-medium text-gray-900 md:max-w-[200px] md:text-sm">
                             {blurText(removeSpecialCharacters(t.name), t.category)}
                           </p>
                         </div>
@@ -129,13 +129,13 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
                     </TableCell>
                     <TableCell
                       className={cn(
-                        'whitespace-nowrap px-4 py-3 text-sm font-semibold',
+                        'whitespace-nowrap px-2 py-2 text-xs font-semibold md:px-4 md:py-3 md:text-sm',
                         isDebit || amount[0] === '-' ? 'text-red-600' : 'text-green-600'
                       )}
                     >
                       {blurAmount(isDebit ? `-${amount}` : amount, t.category)}
                     </TableCell>
-                    <TableCell className="whitespace-nowrap px-4 py-3">
+                    <TableCell className="hidden whitespace-nowrap px-2 py-2 md:table-cell md:px-4 md:py-3">
                       <CategoryBadge category={t.category} />
                     </TableCell>
                   </TableRow>
