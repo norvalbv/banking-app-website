@@ -1,10 +1,10 @@
 import Link from '@/components/ui/Link';
-import { ReactElement } from 'react';
+import { MouseEvent, ReactElement } from 'react';
 
 type NavItemProps = {
   href?: string;
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
   type?: 'button' | 'link';
 };
 

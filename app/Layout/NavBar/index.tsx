@@ -2,18 +2,19 @@
 
 import Logo from '@/components/ui/Logo';
 import useOutsideClick from '@/lib/hooks/useOutsideClick';
+import { smoothScrollTo } from '@/lib/utils';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { MouseEvent, useRef, useState } from 'react';
 import NavItem from './NavItem';
-import { smoothScrollTo } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   const navWidth = useTransform(scrollYProgress, [0, 0.15], ['100%', '90%']);
   const navBackground = useTransform(
@@ -41,6 +42,16 @@ const Navbar = () => {
   };
 
   const handleNavigation = () => {
+    setIsMenuOpen(false);
+  };
+
+  const handlePreRegisterClick = (e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    e.preventDefault();
+    if (pathname === '/') {
+      handleSmoothScroll('pre-register');
+    } else {
+      router.push('/#pre-register');
+    }
     setIsMenuOpen(false);
   };
 
@@ -99,7 +110,9 @@ const Navbar = () => {
               <NavItem href="/contact-us" onClick={handleNavigation}>
                 Contact Us
               </NavItem>
-              <button onClick={() => handleSmoothScroll('pre-register')}>Pre Register</button>
+              <NavItem href="/#pre-register" type="button" onClick={handlePreRegisterClick}>
+                Pre Register
+              </NavItem>
             </div>
           </div>
         </div>
@@ -123,7 +136,7 @@ const Navbar = () => {
               <NavItem href="/contact-us" onClick={handleNavigation}>
                 Contact Us
               </NavItem>
-              <NavItem type="button" onClick={() => handleSmoothScroll('pre-register')}>
+              <NavItem href="/#pre-register" type="button" onClick={handlePreRegisterClick}>
                 Pre Register
               </NavItem>
             </div>

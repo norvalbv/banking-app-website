@@ -1,10 +1,10 @@
 import NextLink from 'next/link';
-import { ReactElement } from 'react';
+import { ReactElement, MouseEvent } from 'react';
 
 type Props = {
   href: string;
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
 };
 
 const Link = ({ href, children, onClick }: Props): ReactElement => {
