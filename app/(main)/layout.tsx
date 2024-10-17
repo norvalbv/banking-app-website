@@ -7,6 +7,8 @@ import { Montserrat } from 'next/font/google';
 import React, { ReactElement } from 'react';
 import Footer from '../Layout/Footer';
 import Nav from '../Layout/NavBar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -44,6 +46,7 @@ const MainLayout = ({ children }: Props): ReactElement => {
           'bg-gray-100 text-gray-800'
         )}
       >
+        <ToastContainer />
         <Nav />
         <main>{children}</main>
         <Footer />
