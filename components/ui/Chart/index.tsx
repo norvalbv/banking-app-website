@@ -105,8 +105,9 @@ const ChartTooltipContent = React.forwardRef<
       indicator?: 'line' | 'dot' | 'dashed';
       nameKey?: string;
       labelKey?: string;
+      unit?: string;
     }
->(({ active, payload, className, hideIndicator = false, label, color }, ref) => {
+>(({ active, payload, className, hideIndicator = false, label, color, unit }, ref) => {
   if (!active || !payload?.length) {
     return null;
   }
@@ -128,6 +129,7 @@ const ChartTooltipContent = React.forwardRef<
           <div className="h-3 w-3 rounded-full" style={{ backgroundColor: color || item.color }} />
         )}
         <span className="font-medium tabular-nums">
+          {unit && ` ${unit}`}
           {typeof value === 'number' ? value.toLocaleString() : value}
         </span>
       </div>

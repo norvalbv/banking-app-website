@@ -17,12 +17,12 @@ const FinanceOverview = (): ReactElement => {
           as="h2"
           className="text-center"
         />
-        <p className="mb-8 max-w-2xl text-sm sm:mb-12 md:text-lg">
+        <p className="mb-8 max-w-2xl text-sm md:mb-12">
           Get a clear picture of your financial health with our intuitive dashboard. Track expenses,
           monitor savings, and make informed decisions about your money.
         </p>
-        <div className="mb-8 flex w-full flex-col items-center justify-center gap-8 sm:mb-16 sm:flex-row sm:gap-12">
-          <Card className="w-full max-w-md">
+        <div className="mb-8 md:mb-16 flex w-full flex-col md:flex-row items-center justify-center gap-8 md:gap-12 flex-wrap">
+          <Card className="w-full max-w-sm">
             <CardHeader>
               <CardTitle>
                 <Header
@@ -37,7 +37,7 @@ const FinanceOverview = (): ReactElement => {
             </CardHeader>
             <CardContent>
               <ChartContainer
-                className="h-[200px] w-full sm:h-[300px]"
+                className="h-[150px] sm:h-[200px] w-full"
                 config={{ expenses: { color: '#14b8a6' } }}
               >
                 <ResponsiveContainer width="100%" height="100%">
@@ -50,25 +50,24 @@ const FinanceOverview = (): ReactElement => {
                       { month: 'May', expenses: 1400 },
                       { month: 'Jun', expenses: 1200 },
                     ]}
-                    margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+                    margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
                   >
                     <XAxis dataKey="month" axisLine={false} tickLine={false} />
                     <YAxis axisLine={false} tickLine={false} width={30} />
                     <Bar dataKey="expenses" fill="#14b8a6" radius={[4, 4, 0, 0]} />
                     <ChartTooltip
                       cursor={{ fill: 'rgba(20, 184, 166, 0.1)' }}
-                      content={<ChartTooltipContent />}
+                      content={<ChartTooltipContent unit="£" />}
                     />
                   </BarChart>
                 </ResponsiveContainer>
               </ChartContainer>
               <p className="mt-4 text-xs sm:text-sm">
-                Monitor your monthly expenses to identify spending patterns and areas for potential
-                savings.
+                Track monthly expenses to identify spending patterns and savings opportunities.
               </p>
             </CardContent>
           </Card>
-          <Card className="w-full max-w-md">
+          <Card className="w-full max-w-sm">
             <CardHeader>
               <CardTitle>
                 <Header
@@ -83,7 +82,7 @@ const FinanceOverview = (): ReactElement => {
             </CardHeader>
             <CardContent>
               <ChartContainer
-                className="h-[200px] w-full sm:h-[300px]"
+                className="h-[150px] sm:h-[200px] w-full"
                 config={{ savings: { color: '#14b8a6' } }}
               >
                 <ResponsiveContainer width="100%" height="100%">
@@ -96,7 +95,7 @@ const FinanceOverview = (): ReactElement => {
                       { month: 'May', savings: 2000 },
                       { month: 'Jun', savings: 2500 },
                     ]}
-                    margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
+                    margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
                   >
                     <XAxis dataKey="month" axisLine={false} tickLine={false} />
                     <YAxis axisLine={false} tickLine={false} width={30} />
@@ -109,7 +108,7 @@ const FinanceOverview = (): ReactElement => {
                     />
                     <ChartTooltip
                       cursor={{ stroke: '#14b8a6', strokeWidth: 2 }}
-                      content={<ChartTooltipContent />}
+                      content={<ChartTooltipContent unit="£" />}
                     />
                   </LineChart>
                 </ResponsiveContainer>

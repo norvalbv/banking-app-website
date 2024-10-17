@@ -3,6 +3,7 @@ import { ReactElement, useMemo } from 'react';
 import CustomLimits from '../DataPoints/CustomLimits';
 import Transactions from '../DataPoints/Transactions';
 import Alerts from '../DataPoints/Alerts';
+import useWindowSize from '@/hooks/useWindowSize';
 
 export type ActiveSection = 'limits' | 'alerts' | 'transactions';
 
@@ -16,6 +17,7 @@ const InfoSection = ({
   activeSection,
   ...headerProps
 }: DetailsProps): ReactElement => {
+  const { width } = useWindowSize();
   const section = useMemo(() => {
     switch (activeSection) {
       case 'limits':
@@ -34,7 +36,7 @@ const InfoSection = ({
           <Header {...headerProps} size="lg" />
           <p className="mb-6 text-gray-500">{description}</p>
         </div>
-        <div className="lg:hidden">{section}</div>
+        {width < 1024 && section}
       </div>
     </div>
   );

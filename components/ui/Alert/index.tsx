@@ -56,7 +56,7 @@ Alert.displayName = 'Alert';
 
 const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h5 ref={ref} className={cn('text-sm font-semibold sm:text-base', className)} {...props} />
+    <h5 ref={ref} className={cn('text-xs font-semibold sm:text-base', className)} {...props} />
   )
 );
 AlertTitle.displayName = 'AlertTitle';
@@ -67,7 +67,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('mt-1 text-xs text-gray-700 dark:text-gray-300 sm:text-sm', className)}
+    className={cn('mt-1 text-[0.6875rem] text-gray-700 dark:text-gray-300 sm:text-sm', className)}
     {...props}
   />
 ));
@@ -88,7 +88,7 @@ const AlertButton = React.forwardRef<
   >
     {props.children}
     <svg
-      className="-mr-0.5 ml-1 h-2 w-2 sm:h-3 sm:w-3"
+      className="-mr-0.5 ml-1 size-3"
       fill="currentColor"
       viewBox="0 0 20 20"
       aria-hidden="true"

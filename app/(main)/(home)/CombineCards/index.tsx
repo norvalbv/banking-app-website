@@ -13,7 +13,7 @@ const CombineCards = () => {
   useEffect(() => {
     setIsClient(true);
     const handleResize = () => {
-      setCardSize(window.innerWidth > 900 ? 'lg' : 'sm');
+      setCardSize(window.innerWidth > 650 ? 'lg' : 'sm');
     };
 
     handleResize();

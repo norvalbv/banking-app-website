@@ -217,7 +217,7 @@ const CardFront = ({
   <>
     <div className="relative z-10 flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl p-5">
       <div>
-        <h1 className="truncate font-sans-alt text-sm font-semibold sm:text-base md:text-3xl">
+        <h1 className="truncate font-sans-alt text-sm font-semibold sm:text-base lg:text-3xl">
           {account?.name}
         </h1>
         {showBalance && account?.currentBalance !== undefined && (
@@ -229,9 +229,9 @@ const CardFront = ({
 
       <article className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <h1 className="truncate text-[10px] font-medium sm:text-xs md:text-sm">{userName}</h1>
+          <h1 className="truncate text-[10px] font-medium sm:text-xs lg:text-sm">{userName}</h1>
         </div>
-        <p className="truncate text-xs font-semibold tracking-wider sm:text-base">
+        <p className="truncate text-xs font-semibold tracking-wider lg:text-base">
           {account?.cardNumber && showAllDetails ? (
             <>
               {account?.cardNumber?.slice(0, -4).replace(/\d{4}/g, '$& ')}
@@ -246,7 +246,7 @@ const CardFront = ({
       </article>
     </div>
 
-    <div className="absolute bottom-0 right-0 flex flex-col items-end justify-between rounded-r-2xl bg-cover bg-center bg-no-repeat py-5 pr-5">
+    <div className="absolute bottom-0 text-sm lg:text-base right-0 flex flex-col items-end justify-between rounded-r-2xl bg-cover bg-center bg-no-repeat py-5 pr-5">
       VISA
     </div>
   </>

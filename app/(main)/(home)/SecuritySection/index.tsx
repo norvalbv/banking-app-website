@@ -9,7 +9,7 @@ import { SECURITY_DESCRIPTION } from './constants';
 
 const SecuritySection = (): ReactElement => {
   return (
-    <CardWrapper className="flex min-h-screen flex-col items-center justify-center px-4 py-8 md:flex-row md:px-8">
+    <CardWrapper className="flex h-[50rem] max-h-screen flex-col items-center justify-center px-4 py-8 md:flex-row md:px-8">
       <Lottie
         animationData={gradientBall}
         loop={true}

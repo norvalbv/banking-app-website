@@ -11,6 +11,7 @@ import { transactionCategoryStyles } from '@/lib/constants';
 import { PoundSterling } from 'lucide-react';
 import Image from 'next/image';
 import type { Transaction } from '@/lib/types';
+import React from 'react';
 
 type CategoryBadgeProps = {
   category: string;
@@ -64,7 +65,7 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
   };
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+    <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm scale-75 sm:scale-100">
       <Table>
         <TableHeader className="bg-gray-50">
           <TableRow>
@@ -81,10 +82,10 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
         </TableHeader>
         <TableBody>
           {Object.entries(groupedTransactions).map(([date, dateTransactions]) => (
-            <>
-              <TableRow key={date}>
+            <React.Fragment key={date}>
+              <TableRow>
                 <TableCell
-                  colSpan={4}
+                  colSpan={3}
                   className="bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-700"
                 >
                   {formatDateTime(new Date(date)).dateTime}
@@ -126,7 +127,6 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
                         </div>
                       </div>
                     </TableCell>
-
                     <TableCell
                       className={cn(
                         'whitespace-nowrap px-4 py-3 text-sm font-semibold',
@@ -135,14 +135,13 @@ const TransactionsTable = ({ transactions, blurCategories = [] }: TransactionTab
                     >
                       {blurAmount(isDebit ? `-${amount}` : amount, t.category)}
                     </TableCell>
-
                     <TableCell className="whitespace-nowrap px-4 py-3">
                       <CategoryBadge category={t.category} />
                     </TableCell>
                   </TableRow>
                 );
               })}
-            </>
+            </React.Fragment>
           ))}
         </TableBody>
       </Table>
