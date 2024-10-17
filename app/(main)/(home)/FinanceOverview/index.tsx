@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import CardWrapper from '@/components/ui/CardWrapper';
 import Header from '@/components/ui/Header';
 import { PoundSterling, TrendingUp } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/AreaChart/Card';
+import { Card, CardContent, CardHeader } from '@/components/ui/AreaChart/Card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/Chart';
 import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
@@ -24,7 +24,6 @@ const FinanceOverview = (): ReactElement => {
         <div className="mb-8 flex w-full flex-col flex-wrap items-center justify-center gap-8 md:mb-16 md:flex-row md:gap-12">
           <Card className="w-full max-w-sm">
             <CardHeader>
-              <CardTitle>
                 <Header
                   title="Expense Tracking"
                   size="xs"
@@ -33,7 +32,6 @@ const FinanceOverview = (): ReactElement => {
                   fontWeight="normal"
                   icon={PoundSterling}
                 />
-              </CardTitle>
             </CardHeader>
             <CardContent>
               <ChartContainer
@@ -69,7 +67,6 @@ const FinanceOverview = (): ReactElement => {
           </Card>
           <Card className="w-full max-w-sm">
             <CardHeader>
-              <CardTitle>
                 <Header
                   title="Savings Growth"
                   size="xs"
@@ -78,7 +75,6 @@ const FinanceOverview = (): ReactElement => {
                   fontWeight="normal"
                   icon={TrendingUp}
                 />
-              </CardTitle>
             </CardHeader>
             <CardContent>
               <ChartContainer

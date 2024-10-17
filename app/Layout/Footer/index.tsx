@@ -23,9 +23,9 @@ const Footer = (): React.ReactElement => {
           <div className="grid grid-cols-2 gap-8 md:w-2/3 md:grid-cols-3">
             {[{ title: 'Support', items: ['Contact Us'] }].map((section) => (
               <div key={section.title}>
-                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-800">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-800">
                   {section.title}
-                </h3>
+                </h4>
                 <ul className="space-y-2">
                   {section.items.map((item) => (
                     <li key={item}>

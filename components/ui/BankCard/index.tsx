@@ -217,9 +217,9 @@ const CardFront = ({
   <>
     <div className="relative z-10 flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl p-5">
       <div>
-        <h1 className="truncate font-sans-alt text-sm font-semibold sm:text-base lg:text-3xl">
+        <span className="truncate font-sans-alt text-sm font-semibold sm:text-base lg:text-3xl">
           {account?.name}
-        </h1>
+        </span>
         {showBalance && account?.currentBalance !== undefined && (
           <p className="truncate text-sm font-black sm:text-base">
             {formatAmount(account?.currentBalance)}
@@ -229,7 +229,7 @@ const CardFront = ({
 
       <article className="flex flex-col gap-2">
         <div className="flex justify-between">
-          <h1 className="truncate text-[10px] font-medium sm:text-xs lg:text-sm">{userName}</h1>
+          <span className="truncate text-[10px] font-medium sm:text-xs lg:text-sm">{userName}</span>
         </div>
         <p className="truncate text-xs font-semibold tracking-wider lg:text-base">
           {account?.cardNumber && showAllDetails ? (
