@@ -1,17 +1,28 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
+import { Montserrat } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 800 900',
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
 });
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 800 900',
+
+const montserratAlt1 = localFont({
+  src: [
+    {
+      path: '../public/fonts/MontserratAlt1-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/MontserratAlt1-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-montserrat-alt1',
 });
 
 export const metadata: Metadata = {
@@ -28,10 +39,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          geistSans.variable,
-          geistMono.variable,
-          'antialiased',
-          'flex min-h-screen flex-col bg-black text-white'
+          montserrat.variable,
+          montserratAlt1.variable,
+          'font-sans antialiased',
+          'min-h-screen bg-gray-100 text-gray-800'
         )}
       >
         {children}
