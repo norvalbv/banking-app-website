@@ -30,7 +30,7 @@ const InfoSectionDisplay = ({ activeSection }: InfoSectionDisplayProps): ReactEl
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative h-full max-h-[50vh] w-full max-w-4xl px-4 sm:px-0"
+          className="relative h-full max-h-[70vh] w-full max-w-4xl px-4 sm:px-0"
         >
           {section}
         </motion.div>

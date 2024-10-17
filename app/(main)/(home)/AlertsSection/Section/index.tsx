@@ -21,14 +21,17 @@ export const Section = ({
   }, [inView, onInView]);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: inView ? 1 : 0 }}
-      transition={{ duration: 1.25 }}
-      className="flex h-screen items-center justify-center"
-    >
-      {children}
-    </motion.div>
+    <>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        transition={{ duration: 1.25 }}
+        className="hidden h-screen items-center justify-center lg:flex"
+      >
+        {children}
+      </motion.div>
+      <div className="lg:hidden">{children}</div>
+    </>
   );
 };

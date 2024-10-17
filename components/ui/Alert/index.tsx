@@ -42,8 +42,8 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                 : 'from-teal-500/10'
         } to-transparent`}
       />
-      <div className="relative flex flex-col sm:flex-row items-start sm:items-center p-4">
-        <div className="flex-1 w-full sm:w-auto">
+      <div className="relative flex flex-col items-start p-4 sm:flex-row sm:items-center">
+        <div className="w-full flex-1 sm:w-auto">
           {title && <AlertTitle>{title}</AlertTitle>}
           {description && <AlertDescription>{description}</AlertDescription>}
           {buttonText && <AlertButton onClick={onButtonClick}>{buttonText}</AlertButton>}
@@ -56,7 +56,7 @@ Alert.displayName = 'Alert';
 
 const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h5 ref={ref} className={cn('text-base sm:text-lg font-semibold', className)} {...props} />
+    <h5 ref={ref} className={cn('text-base font-semibold sm:text-lg', className)} {...props} />
   )
 );
 AlertTitle.displayName = 'AlertTitle';
@@ -67,7 +67,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('mt-1 text-xs sm:text-sm text-gray-700 dark:text-gray-300', className)}
+    className={cn('mt-1 text-xs text-gray-700 dark:text-gray-300 sm:text-sm', className)}
     {...props}
   />
 ));
@@ -80,8 +80,8 @@ const AlertButton = React.forwardRef<
   <button
     ref={ref}
     className={cn(
-      'mt-3 inline-flex items-center rounded-md py-2 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2',
-      'hover:bg-current/10 text-inherit focus:ring-current w-full sm:w-auto justify-center justify-start',
+      'mt-3 inline-flex items-center rounded-md py-2 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm',
+      'hover:bg-current/10 w-full justify-start justify-center text-inherit focus:ring-current sm:w-auto',
       className
     )}
     {...props}

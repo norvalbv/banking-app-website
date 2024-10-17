@@ -17,6 +17,7 @@ import {
 import { Textarea } from '@/components/ui/TextArea';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/Button';
+import Header from '@/components/ui/Header';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -47,8 +48,8 @@ const ContactUs = (): ReactElement => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
+    <div className="card-wrapper">
+      <Header className="mb-8 text-4xl font-bold" title="Contact" highlightedText="Us" />
       {isSubmitted ? (
         <Alert
           variant="succeeded"
@@ -91,11 +92,7 @@ const ContactUs = (): ReactElement => {
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea
-                      placeholder="Your message"
-                      className="resize-none"
-                      {...field}
-                    />
+                    <Textarea placeholder="Your message" className="resize-none" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

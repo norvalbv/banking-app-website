@@ -8,10 +8,12 @@ import Link from 'next/link';
 import { useRef, useState } from 'react';
 import NavItem from './NavItem';
 import { smoothScrollTo } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navWidth = useTransform(scrollYProgress, [0, 0.15], ['100%', '90%']);
   const navBackground = useTransform(
@@ -85,6 +87,7 @@ const Navbar = () => {
               </AnimatePresence>
             </motion.div>
             <div className="hidden md:flex md:space-x-4">
+              {pathname !== '/' && <NavItem href="/">Home</NavItem>}
               <NavItem href="/contact-us">Contact Us</NavItem>
               <button onClick={() => handleSmoothScroll('pre-register')}>Pre Register</button>
             </div>
@@ -102,6 +105,7 @@ const Navbar = () => {
             className="absolute left-0 right-0 top-full mx-auto mt-2 w-[90%] rounded-xl border border-white bg-white/75 p-4 shadow-lg backdrop-blur-[0.5rem]"
           >
             <div className="flex flex-col space-y-2">
+              {pathname !== '/' && <NavItem href="/">Home</NavItem>}
               <NavItem href="/contact-us">Contact Us</NavItem>
               <button
                 onClick={() => handleSmoothScroll('pre-register')}

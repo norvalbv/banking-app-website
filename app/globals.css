@@ -7,6 +7,10 @@ body {
 }
 
 @layer utilities {
+  .card-wrapper {
+    @apply flex min-h-svh w-full flex-col gap-8 p-8 sm:min-h-svh xl:py-12;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

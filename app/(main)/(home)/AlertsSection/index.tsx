@@ -11,7 +11,7 @@ const AlertsSection = (): ReactElement => {
 
   return (
     <CardWrapper className="flex">
-      <div>
+      <div className="max-lg:flex max-lg:flex-col max-lg:gap-24 max-lg:my-24">
         <Section onInView={() => setActiveSection('limits')}>
           <InfoSection
             title="Set Custom"
