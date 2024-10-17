@@ -1,10 +1,8 @@
 'use client';
 
-import { ReactElement, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import Alert from '@/components/ui/Alert';
+import { Button } from '@/components/ui/Button';
+import CardWrapper from '@/components/ui/CardWrapper';
 import {
   Form,
   FormControl,
@@ -13,12 +11,15 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/Form';
+import Header from '@/components/ui/Header';
 import { Textarea } from '@/components/ui/TextArea';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/Button';
-import Header from '@/components/ui/Header';
-import CardWrapper from '@/components/ui/CardWrapper';
-import { successfulToast } from '@/lib/toasts';
+import sendEmail from '@/lib/actions/sendEmail';
+import { erroneousToast, successfulToast } from '@/lib/toasts';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { ReactElement, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -41,12 +42,21 @@ const ContactUs = (): ReactElement => {
 
   const onSubmit = async (data: z.infer<typeof contactFormSchema>) => {
     setIsLoading(true);
-    // Simulate API call
-    successfulToast('Message sent successfully');
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(data);
-    setIsLoading(false);
-    setIsSubmitted(true);
+    try {
+      const response = await sendEmail(data);
+
+      if (response.ok) {
+        successfulToast('Message sent successfully');
+        setIsSubmitted(true);
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error(error);
+      erroneousToast('Failed to send message');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
