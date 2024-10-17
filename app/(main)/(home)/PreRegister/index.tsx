@@ -68,7 +68,11 @@ const PreRegister = (): React.ReactElement => {
         </div>
         {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
         <div className="flex items-center space-x-2">
-          <Checkbox id="newsletter" {...register('newsletter')} />
+          <Checkbox
+            id="newsletter"
+            aria-label="Subscribe to newsletter"
+            {...register('newsletter')}
+          />
           <Label htmlFor="newsletter">Subscribe to newsletter</Label>
         </div>
         <p className="text-sm text-gray-500">We respect your privacy. Unsubscribe at any time.</p>
