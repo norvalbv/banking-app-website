@@ -1,6 +1,4 @@
-import { Button } from '@/components/ui/Button';
 import Header, { HeaderProps } from '@/components/ui/Header';
-import { ArrowRight } from 'lucide-react';
 import { ReactElement, useMemo } from 'react';
 import CustomLimits from '../DataPoints/CustomLimits';
 import Transactions from '../DataPoints/Transactions';
@@ -35,9 +33,6 @@ const InfoSection = ({
         <div>
           <Header {...headerProps} size="lg" />
           <p className="mb-6 text-gray-500">{description}</p>
-          <Button icon={ArrowRight} iconPosition="right">
-            Learn More
-          </Button>
         </div>
         <div className="lg:hidden">{section}</div>
       </div>

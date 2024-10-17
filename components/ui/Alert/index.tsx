@@ -42,7 +42,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                 : 'from-teal-500/10'
         } to-transparent`}
       />
-      <div className="relative flex flex-col items-start p-4 sm:flex-row sm:items-center">
+      <div className="relative flex flex-col items-start p-2 sm:flex-row sm:items-center sm:p-4">
         <div className="w-full flex-1 sm:w-auto">
           {title && <AlertTitle>{title}</AlertTitle>}
           {description && <AlertDescription>{description}</AlertDescription>}
@@ -56,7 +56,7 @@ Alert.displayName = 'Alert';
 
 const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h5 ref={ref} className={cn('text-base font-semibold sm:text-lg', className)} {...props} />
+    <h5 ref={ref} className={cn('text-sm font-semibold sm:text-base', className)} {...props} />
   )
 );
 AlertTitle.displayName = 'AlertTitle';
@@ -80,15 +80,15 @@ const AlertButton = React.forwardRef<
   <button
     ref={ref}
     className={cn(
-      'mt-3 inline-flex items-center rounded-md py-2 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm',
-      'hover:bg-current/10 w-full justify-start justify-center text-inherit focus:ring-current sm:w-auto',
+      'mt-2 inline-flex items-center rounded-md py-1 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 sm:mt-3 sm:py-2 sm:text-sm',
+      'hover:bg-current/10 w-full justify-start text-inherit focus:ring-current sm:w-auto',
       className
     )}
     {...props}
   >
     {props.children}
     <svg
-      className="-mr-0.5 ml-2 h-3 w-3 sm:h-4 sm:w-4"
+      className="-mr-0.5 ml-1 h-2 w-2 sm:h-3 sm:w-3"
       fill="currentColor"
       viewBox="0 0 20 20"
       aria-hidden="true"

@@ -3,7 +3,7 @@ import Alert from '@/components/ui/Alert';
 
 const Alerts = (): ReactElement => {
   return (
-    <div className="flex items-center justify-center h-full w-full">
+    <div className="flex h-full w-full items-center justify-center">
       <div className="grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-6 sm:p-4">
         <Alert
           variant="info"
