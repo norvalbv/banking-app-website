@@ -18,6 +18,8 @@ const InfoSectionDisplay = ({ activeSection }: InfoSectionDisplayProps): ReactEl
         return <AlertsSection />;
       case 'transactions':
         return <Transactions />;
+      default:
+        return null;
     }
   }, [activeSection]);
 

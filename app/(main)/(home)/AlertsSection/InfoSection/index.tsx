@@ -1,5 +1,7 @@
+'use client';
+
 import Header, { HeaderProps } from '@/components/ui/Header';
-import { ReactElement, useMemo } from 'react';
+import { ReactElement, useMemo, useState, useEffect } from 'react';
 import CustomLimits from '../DataPoints/CustomLimits';
 import Transactions from '../DataPoints/Transactions';
 import Alerts from '../DataPoints/Alerts';
@@ -18,6 +20,12 @@ const InfoSection = ({
   ...headerProps
 }: DetailsProps): ReactElement => {
   const { width } = useWindowSize();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(width < 1024);
+  }, [width]);
+
   const section = useMemo(() => {
     switch (activeSection) {
       case 'limits':
@@ -30,14 +38,12 @@ const InfoSection = ({
   }, [activeSection]);
 
   return (
-    <div className="flex w-full items-center justify-between sm:px-8">
+    <div className="flex w-full flex-col items-center justify-between gap-8 sm:px-8 lg:gap-0">
       <div className="flex flex-col gap-8 lg:gap-0">
-        <div>
-          <Header {...headerProps} size="lg" />
-          <p className="mb-6 text-gray-500">{description}</p>
-        </div>
-        {width < 1024 && section}
+        <Header {...headerProps} size="lg" />
+        <p className="mb-6 text-gray-500">{description}</p>
       </div>
+      {isMobile && section}
     </div>
   );
 };

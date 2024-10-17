@@ -24,14 +24,14 @@ const FinanceOverview = (): ReactElement => {
         <div className="mb-8 flex w-full flex-col flex-wrap items-center justify-center gap-8 md:mb-16 md:flex-row md:gap-12">
           <Card className="w-full max-w-sm">
             <CardHeader>
-                <Header
-                  title="Expense Tracking"
-                  size="xs"
-                  as="h3"
-                  margin="none"
-                  fontWeight="normal"
-                  icon={PoundSterling}
-                />
+              <Header
+                title="Expense Tracking"
+                size="xs"
+                as="h3"
+                margin="none"
+                fontWeight="normal"
+                icon={PoundSterling}
+              />
             </CardHeader>
             <CardContent>
               <ChartContainer
@@ -67,14 +67,14 @@ const FinanceOverview = (): ReactElement => {
           </Card>
           <Card className="w-full max-w-sm">
             <CardHeader>
-                <Header
-                  title="Savings Growth"
-                  size="xs"
-                  as="h3"
-                  margin="none"
-                  fontWeight="normal"
-                  icon={TrendingUp}
-                />
+              <Header
+                title="Savings Growth"
+                size="xs"
+                as="h3"
+                margin="none"
+                fontWeight="normal"
+                icon={TrendingUp}
+              />
             </CardHeader>
             <CardContent>
               <ChartContainer
