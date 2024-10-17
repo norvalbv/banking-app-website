@@ -2,7 +2,7 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import type React from 'react';
 
 const logoVariants = cva(
-  'font-medium bg-gradient-to-r font-sans-alt from-gray-800 via-gray-500 to-gray-400 bg-clip-text text-transparent',
+  'font-medium inline-block bg-gradient-to-r font-sans-alt from-gray-800 via-gray-500 to-gray-400 bg-clip-text w-fit text-transparent',
   {
     variants: {
       size: {
@@ -19,7 +19,7 @@ const logoVariants = cva(
 type LogoProps = VariantProps<typeof logoVariants>;
 
 const Logo = ({ size }: LogoProps): React.ReactElement => {
-  return <h1 className={logoVariants({ size })}>ARIAN</h1>;
+  return <span className={logoVariants({ size })}>ARIAN</span>;
 };
 
 export default Logo;

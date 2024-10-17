@@ -1,3 +1,4 @@
+import Logo from '@/components/ui/Logo';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,7 +8,7 @@ const Footer = (): React.ReactElement => {
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 2xl:max-w-screen-2xl">
         <div className="flex flex-col space-y-8 md:flex-row md:justify-between md:space-y-0">
           <div className="space-y-6 md:w-1/3">
-            <h3 className="text-xl font-bold text-teal-500 sm:text-2xl">Banking App</h3>
+            <Logo size="lg" />
             <p className="text-sm text-gray-500 sm:text-base">
               Making the world a better place through innovative solutions.
             </p>
@@ -28,7 +29,10 @@ const Footer = (): React.ReactElement => {
                 <ul className="space-y-2">
                   {section.items.map((item) => (
                     <li key={item}>
-                      <Link href="#" className="text-sm text-gray-500 hover:text-teal-500">
+                      <Link
+                        href="/contact-us"
+                        className="text-sm text-gray-500 hover:text-teal-500"
+                      >
                         {item}
                       </Link>
                     </li>

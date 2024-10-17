@@ -55,27 +55,21 @@ const PreRegister = (): React.ReactElement => {
         Be the first to know when we launch. Sign up for early access and exclusive offers.
       </p>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row">
           <Input
             type="email"
             placeholder="Enter your email"
             {...register('email')}
             className="flex-1"
           />
-          <Button type="submit" icon={ArrowRight} iconPosition="right" className="sm:w-auto w-full">
+          <Button type="submit" icon={ArrowRight} iconPosition="right" className="w-full sm:w-auto">
             Pre Register
           </Button>
         </div>
-        {errors.email && (
-          <p className="text-sm text-red-500">{errors.email.message}</p>
-        )}
+        {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
         <div className="flex items-center space-x-2">
           <Checkbox id="newsletter" {...register('newsletter')} />
-          <Label
-            htmlFor="newsletter"
-          >
-            Subscribe to newsletter
-          </Label>
+          <Label htmlFor="newsletter">Subscribe to newsletter</Label>
         </div>
         <p className="text-sm text-gray-500">We respect your privacy. Unsubscribe at any time.</p>
       </form>

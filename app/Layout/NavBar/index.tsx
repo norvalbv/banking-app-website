@@ -123,12 +123,9 @@ const Navbar = () => {
               <NavItem href="/contact-us" onClick={handleNavigation}>
                 Contact Us
               </NavItem>
-              <button
-                onClick={() => handleSmoothScroll('pre-register')}
-                className="flex h-9 items-center justify-center rounded-xl p-6 text-base font-semibold capitalize text-gray-700 transition-all duration-500 ease-in-out hover:text-gray-900"
-              >
+              <NavItem type="button" onClick={() => handleSmoothScroll('pre-register')}>
                 Pre Register
-              </button>
+              </NavItem>
             </div>
           </motion.div>
         )}

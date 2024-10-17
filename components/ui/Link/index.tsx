@@ -12,7 +12,7 @@ const Link = ({ href, children, onClick }: Props): ReactElement => {
     <NextLink
       href={href}
       onClick={onClick}
-      className="flex h-9 items-center justify-center rounded-xl p-6 text-base font-semibold capitalize text-gray-700 transition-all duration-500 ease-in-out hover:text-gray-900"
+      className="flex h-9 items-center justify-center rounded-xl p-6 text-base capitalize text-gray-700 transition-all duration-500 ease-in-out hover:text-gray-900"
     >
       {children}
     </NextLink>
