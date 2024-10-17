@@ -4,7 +4,7 @@ import React from 'react';
 import Hero from '@/app/(main)/(home)/Hero';
 import PreRegister from './PreRegister';
 import AlertsSection from './AlertsSection';
-import AccountSetupSteps from './AccountSetupSteps';
+import HowItWorks from './HowItWorks';
 import CombineCards from './CombineCards';
 import SecuritySection from './SecuritySection';
 import FinanceOverview from './FinanceOverview';
@@ -16,7 +16,7 @@ const Page = () => {
       <div className="absolute left-0 top-[82.5vh] w-full blur-xl">
         <div className="bg-gradient-radial-lighter h-screen" />
       </div>
-      <AccountSetupSteps />
+      <HowItWorks />
       <CombineCards />
       <FinanceOverview />
       <AlertsSection />

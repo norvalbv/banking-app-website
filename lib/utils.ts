@@ -9,7 +9,7 @@ export function smoothScrollTo(elementId: string, duration = 1000) {
   const element = document.getElementById(elementId);
   if (!element) return;
 
-  const startPosition = window.pageYOffset;
+  const startPosition = window.scrollY;
   const endPosition = element.getBoundingClientRect().top;
   const startTime = performance.now();
 

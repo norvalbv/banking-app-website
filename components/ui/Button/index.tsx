@@ -35,7 +35,7 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> &
     icon?: IconType;
     iconPosition?: 'left' | 'right';
     loading?: boolean;
-    buttonType?: 'button' | 'submit';
+    type?: 'button' | 'submit';
   };
 
 const Button = ({
@@ -45,7 +45,7 @@ const Button = ({
   icon: Icon,
   iconPosition = 'left',
   loading,
-  buttonType = 'button',
+  type = 'button',
   variant,
   children,
 }: Props): ReactElement => {
@@ -64,7 +64,7 @@ const Button = ({
 
   return (
     <button
-      type={buttonType}
+      type={type}
       disabled={loading}
       className={cn(
         buttonVariants({

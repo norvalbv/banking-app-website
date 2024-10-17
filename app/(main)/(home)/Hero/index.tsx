@@ -23,11 +23,11 @@ const Hero = (): ReactElement => {
           health is secured.
         </p>
         <div className="flex items-center gap-4">
-          <Button onClick={() => smoothScrollTo('launch-schedule', 2000)} icon={ArrowDownToLine}>
+          <Button onClick={() => smoothScrollTo('how-it-works', 2000)} icon={ArrowDownToLine}>
             Learn More
           </Button>
           <Button
-            onClick={() => smoothScrollTo('launch-schedule', 2000)}
+            onClick={() => smoothScrollTo('pre-register', 2000)}
             variant="ghost"
             icon={MoveRight}
             iconPosition="right"
