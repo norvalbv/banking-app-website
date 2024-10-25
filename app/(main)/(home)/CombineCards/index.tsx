@@ -23,7 +23,7 @@ const CombineCards = () => {
   }, []);
 
   return (
-    <CardWrapper className="flex min-h-screen flex-col items-center justify-center gap-6 px-4 sm:px-6 md:flex-row md:gap-10 lg:px-20 2xl:h-[50vh] 2xl:items-end">
+    <CardWrapper className="flex min-h-screen flex-col items-center justify-center gap-6 px-4 sm:px-6 md:flex-row md:gap-10 lg:px-20 2xl:h-[50vh]">
       <div className="w-full md:w-1/2 lg:w-2/5">
         <Header
           title="Combine All"
