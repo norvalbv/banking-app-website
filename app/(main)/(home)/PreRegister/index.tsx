@@ -72,6 +72,7 @@ const PreRegister = (): React.ReactElement => {
             id="newsletter"
             aria-label="Subscribe to newsletter"
             {...register('newsletter')}
+            defaultChecked={true}
           />
           <Label htmlFor="newsletter">Subscribe to newsletter</Label>
         </div>
